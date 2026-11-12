@@ -123,16 +123,16 @@
       gsap.set(main, { scale: .8, transformOrigin: `50% ${innerHeight / 2}px`, willChange: 'transform' });
       // Two right-to-left cuts: the face clears first, followed by its backing mask.
       gsap.timeline({ onComplete: finish })
-        .to('.loading-enter', { opacity: 0, duration: .18 }, 0)
-        .to('.loading-access', { opacity: 1, duration: .18 }, .1)
-        .to('.loading-panel', { scale: .8, duration: .5, ease: 'power3.inOut' }, 0)
-        .set(root, { backgroundColor: 'transparent' }, .55)
-        .to('.loading-face', { clipPath: 'inset(0 100% 0 0)', duration: .65, ease: 'power2.inOut' }, .55)
-        .to('.loading-underlay', { clipPath: 'inset(0 100% 0 0)', duration: .65, ease: 'power2.inOut' }, .63)
-        .set('.loading-panel', { visibility: 'hidden' }, 1.3)
-        .to(root, { backgroundColor: 'transparent', duration: .01 }, 1.3)
-        .to('.loading-frame,.loading-surround', { opacity: 0, duration: .22 }, 1.3)
-        .to(main, { scale: 1, duration: .55, ease: 'power3.inOut' }, 1.3);
+        .to('.loading-enter', { opacity: 0, duration: .25 }, 0)
+        .to('.loading-access', { opacity: 1, duration: .25 }, .15)
+        .to('.loading-panel', { scale: .8, duration: .85, ease: 'power3.inOut' }, 0)
+        .set(root, { backgroundColor: 'transparent' }, .95)
+        .to('.loading-face', { clipPath: 'inset(0 100% 0 0)', duration: 1.1, ease: 'power2.inOut' }, .95)
+        .to('.loading-underlay', { clipPath: 'inset(0 100% 0 0)', duration: 1.1, ease: 'power2.inOut' }, 1.04)
+        .set('.loading-panel', { visibility: 'hidden' }, 2.15)
+        .to(root, { backgroundColor: 'transparent', duration: .01 }, 2.15)
+        .to('.loading-frame,.loading-surround', { opacity: 0, duration: .35 }, 2.15)
+        .to(main, { scale: 1, duration: .85, ease: 'power3.inOut' }, 2.15);
     });
   });
 })();
