@@ -71,9 +71,12 @@
       .to(dots, { strokeDashoffset: 0, autoRound: false, duration: 1.1, ease: inOut }, 0);
     // Only prepare HOME artwork; decoding the hidden WORK images defeats lazy loading.
     const assets = [document.fonts.ready, ...Array.from(document.querySelectorAll('#intro .hero img:not([loading="lazy"])'), img => img.decode ? img.decode().catch(() => {}) : Promise.resolve())];
+    // The progress sweep plus ENTER reveal takes 1.21s. Aim for a 4.5s gate
+    // from navigation, rather than adding another full wait after scripts load.
+    const wait = Math.max(0, 4500 - performance.now() - 1210);
     let timeout;
-    const fallback = new Promise(r => { timeout = setTimeout(r, 2400); });
-    Promise.all([Promise.race([Promise.allSettled(assets), fallback]), new Promise(r => setTimeout(r, 1200))]).then(() => {
+    const fallback = new Promise(r => { timeout = setTimeout(r, Math.min(2400, wait)); });
+    Promise.all([Promise.race([Promise.allSettled(assets), fallback]), new Promise(r => setTimeout(r, wait))]).then(() => {
       clearTimeout(timeout);
       load = gsap.timeline();
       load.to(status, { autoAlpha: 1, y: 0, duration: .4, ease: out }, 0)
@@ -121,6 +124,7 @@
       if (entering || button.disabled) return;
       entering = true; load?.kill(); blink?.kill(); button.disabled = true; root.dataset.phase = 'exit';
       gsap.set(main, { scale: .8, transformOrigin: `50% ${innerHeight / 2}px`, willChange: 'transform' });
+      document.documentElement.classList.add('loading-revealing');
       // Two right-to-left cuts: the face clears first, followed by its backing mask.
       gsap.timeline({ onComplete: finish })
         .to('.loading-enter', { opacity: 0, duration: .25 }, 0)

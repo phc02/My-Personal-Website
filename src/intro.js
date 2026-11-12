@@ -143,7 +143,7 @@
       gsap.set('.site-credit,.navigate-toggle',{clearProps:'transform,opacity,visibility'});
       gsap.set(prompt,{autoAlpha:.85});
       gsap.set('.home-corner-copy',{autoAlpha:1,y:0});
-      createScene();document.documentElement.classList.remove('loading');unlocked=true;ScrollTrigger.refresh();
+      createScene();document.documentElement.classList.remove('loading','loading-revealing');unlocked=true;ScrollTrigger.refresh();
     };
     if(reduced||window.__projectReturn||['#about','#work','#contact'].includes(location.hash)){finish();return;}
     const entrance=gsap.timeline({onComplete:finish});

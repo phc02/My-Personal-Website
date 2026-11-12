@@ -123,6 +123,9 @@ if (!local && videoBase) {
       for (const block of blocks) {
         chunks.push(html.slice(offset, block.index)); offset = block.index + block[0].length;
         if (block[2] !== undefined) {
+          // Keep the first-paint guard in the HTML so refresh never exposes HOME
+          // before the deferred loading script can mount its overlay.
+          if (/\bid=["']home-loading-guard["']/.test(block[1])) { chunks.push(block[0]); continue; }
           const css = block[2].replace(/url\((['"]?)([^)'"\s]+)\1\)/g, (whole, quote, url) => {
             if (/^(data:|https?:|\/\/|#|%23)/.test(url)) return whole;
             const asset = local && url.startsWith('public/') ? url.slice(7) : url.replace(/^\.\//,'');
