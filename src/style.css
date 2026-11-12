@@ -781,7 +781,7 @@ button.brand:focus-visible{outline:2px solid #a99aff;outline-offset:12px}
 .skill-orbit-label strong{font-size:13px;font-weight:500;color:#f5f5f7;letter-spacing:.02em}
 .skill-orbit-label>span{font-size:11px;color:#929198;font-weight:400}
 .skill-orbit-card.is-active .skill-orbit-label{opacity:1;visibility:visible;transform:translateX(calc(-50% + var(--tip-shift,0px))) translateY(0)}
-.navigation-route .skills-orbit,html.loading .skills-orbit,.project-transitioning .skills-orbit{visibility:hidden!important;pointer-events:none!important}
+.navigation-route .skills-orbit,html.loading:not(.loading-revealing) .skills-orbit,.project-transitioning .skills-orbit{visibility:hidden!important;pointer-events:none!important}
 @media(max-width:767px){.skill-orbit-position{width:46px;height:46px}.skill-orbit-card{border-radius:11px}.skill-orbit-card img{width:39px;height:39px}.skill-orbit-label{top:calc(100% + 10px)}.skill-orbit-label strong{font-size:12px}.skill-orbit-label>span{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.skill-orbit-card,.skill-orbit-label{transition:none}.skill-orbit-position{will-change:auto}}
 

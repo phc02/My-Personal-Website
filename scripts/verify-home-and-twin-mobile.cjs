@@ -14,7 +14,7 @@ const base=process.env.PORTFOLIO_BASE||'http://127.0.0.1:4288/';
     const start=performance.now();
     const sample=()=>{
      const orbit=document.querySelector('.skills-orbit');
-     if(orbit&&!orbit.hidden&&orbit.dataset.motion==='entrance'
+     if(orbit&&!orbit.hidden&&getComputedStyle(orbit).visibility==='visible'&&orbit.dataset.motion==='entrance'
        &&gsap.getTweensOf('.site-credit').some(tween=>tween.isActive())
        &&gsap.getTweensOf('.home-corner-copy').some(tween=>tween.isActive())){
       window.__entranceSync=performance.now()-start;return;
