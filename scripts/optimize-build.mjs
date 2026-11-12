@@ -22,6 +22,7 @@ export async function optimizeBuild(root) {
   await rm(generated, {recursive: true, force: true}); await mkdir(generated, {recursive: true});
   const variants = JSON.parse(await readFile(resolve(root, 'src/asset-variants.json'), 'utf8'));
   const responsiveImages = JSON.parse(await readFile(resolve(root, 'src/case-responsive-images.json'), 'utf8'));
+  const mobileChapters = JSON.parse(await readFile(resolve(root, 'src/case-mobile-chapters.json'), 'utf8'));
   const assetByHash = new Map(), decoded = new Map(), emitted = new Set();
   const publicFiles = await filesIn(publicRoot);
   for (const path of publicFiles) {
@@ -71,6 +72,18 @@ export async function optimizeBuild(root) {
       // Continue to honor the user's exact original images; only lossless variants are substituted.
       for (const [original, variant] of Object.entries(variants)) html = html.replaceAll(prefix + original, prefix + variant);
       if (['ZHURONG.html', 'M7-MONITOR.html'].includes(route)) {
+        if(process.env.CASE_CHAPTER_CAPTURE!=='1'){
+        const chapters=mobileChapters[route.replace('.html','')];let chapterIndex=0;
+        const escapeText=value=>value.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+        html=html.replace(/<section\b([^>]*)>([\s\S]*?)<\/section>/g,(whole,attributes,content)=>{
+          if(!/class="(?:zhurong|monitor)-case-section"/.test(attributes))return whole;
+          const chapter=chapters[chapterIndex++];if(!chapter)throw new Error(`Missing mobile chapter for ${route}`);
+          const srcset=chapter.variants.map(item=>`${prefix}${item.src} ${item.width}w`).join(', ');
+          return `<section${attributes} data-case-chapter="${prefix}${chapter.variants[0].src}" data-case-srcset="${srcset}"><template data-case-desktop>${content}</template><div class="case-mobile-copy">${escapeText(chapter.text)}</div></section>`;
+        });
+        if(chapterIndex!==chapters.length)throw new Error(`Mobile chapter count differs for ${route}: ${chapterIndex}/${chapters.length}`);
+        html=html.replace('<head>',`<head><script defer src="${prefix}case-mobile-reading.js"></script>`);
+        }
         html = html.replace('</head>', `<link rel="stylesheet" href="${prefix}case-study-mobile.css">\n</head>`);
         const responsive = source => {
           const image = responsiveImages[source];
@@ -182,6 +195,7 @@ if (!local && videoBase) {
     for (const match of text.matchAll(/\b(?:srcset=|srcSet:)(["'])(.*?)\1/g)) {
       candidates.push(...match[2].split(',').map(item => item.trim().split(/\s+/)[0]));
     }
+    for (const match of text.matchAll(/\bdata-case-srcset="([^"]+)"/g)) candidates.push(...match[1].split(',').map(item=>item.trim().split(/\s+/)[0]));
     if (file.endsWith('.css')) candidates.push(...[...text.matchAll(/url\((['"]?)([^)'"\s]+)\1\)/g)].map(m => m[2]));
     for (let candidate of candidates) {
       if (/^(?:[a-z]+:|\/\/|#|%23)/i.test(candidate) || candidate.includes('${') || candidate.includes('&quot;')) continue;

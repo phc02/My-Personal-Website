@@ -4,6 +4,7 @@
 .twin-artboard{display:block;width:100%;height:auto;max-width:none;margin:0;user-select:none}
 .twin-flow-link{position:absolute;left:4.16666667%;bottom:calc(6.94444444% - 4px);display:flex;align-items:center;gap:16px;color:#fff;opacity:.45;font:400 20px/1.4 MonitorMiSans,"Microsoft YaHei",sans-serif;text-decoration:none;transition:opacity .2s ease}
 .twin-flow-link svg{display:block;width:14px;height:14px;flex:none;transform:rotate(0deg);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+@media(max-width:767px){.twin-flow-link{font-size:1.04166667vw;gap:.83333333vw}.twin-flow-link svg{width:.72916667vw;height:.72916667vw}}
 .twin-flow-link:hover,.twin-flow-link:focus-visible{opacity:1}
 .twin-flow-link:hover svg,.twin-flow-link:focus-visible svg{transform:rotate(45deg)}
 #twin-development-flow{scroll-margin-top:76px}

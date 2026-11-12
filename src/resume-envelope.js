@@ -106,7 +106,7 @@
     if (next) scheduleHint(); else stopHint();
   }
   window.addEventListener('aboutreveal', event => showEntry(event.detail.revealed));
-  if (window.__introState?.().circle.r >= Math.hypot(innerWidth, innerHeight) / 2) showEntry(true);
+  if (window.__introState?.().aboutRevealed) showEntry(true);
 
   function geometry() {
     const ratio = (image.naturalWidth || 2380) / (image.naturalHeight || 3368);

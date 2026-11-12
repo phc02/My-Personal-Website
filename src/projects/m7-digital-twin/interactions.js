@@ -73,6 +73,23 @@
  fine.addEventListener('change',()=>{if(!fine.matches)hide();});
 })();
 
+// Retry muted inline playback after the page curtain and background-tab restore.
+(()=>{
+ const video=document.querySelector('.twin-screen-video');if(!video)return;
+ video.muted=video.defaultMuted=true;video.autoplay=true;video.loop=true;video.playsInline=true;
+ video.setAttribute('muted','');video.setAttribute('playsinline','');video.setAttribute('webkit-playsinline','');
+ const play=()=>{
+  if(document.hidden||document.documentElement.classList.contains('twin-demo-open'))return;
+  video.play().catch(()=>{});
+ };
+ ['loadeddata','canplay'].forEach(name=>video.addEventListener(name,play));
+ ['pageshow','projecttransitioncomplete'].forEach(name=>addEventListener(name,play));
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)play();});
+ const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting))play();});observer.observe(video);
+ document.addEventListener('touchstart',play,{passive:true});
+ play();
+})();
+
 document.querySelector('.twin-flow-link')?.addEventListener('click',event=>{
  const section=document.querySelector('#twin-development-flow');if(!section)return;
  event.preventDefault();section.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});

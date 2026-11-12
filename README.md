@@ -57,6 +57,8 @@ npm start
 
 铸融与 M7 监控详情页使用手机专用的响应式图片，桌面继续读取完整原图。更新这两页的大图后，运行 `python qa/prepare-case-mobile-images.py`（需要 Pillow），并提交生成的 `public/assets/case-responsive/` 与 `src/case-responsive-images.json`。普通部署构建不需要 Python 或图片处理依赖。手机端减少长章节合成层和文字模糊，避免滚动期间持续占用过多图像内存。
 
+手机长案例正文采用逐章按需渲染，只挂载当前及邻近章节，退出范围后释放图片；桌面恢复原生设计画板。正文图片保留可访问的文字副本与固定章节比例。更新正文后，先设置环境变量 `CASE_CHAPTER_CAPTURE=1` 并构建，再运行 `node qa/capture-case-chapters.cjs`（需要 Playwright 与 Chrome）和 `python qa/prepare-case-mobile-chapters.py`。提交 `src/case-mobile-chapters.json` 和 `public/assets/case-mobile-chapters/`，清除该环境变量后重新构建。截图会隐藏固定顶栏，避免把导航重复嵌入每个章节。可用 `node scripts/verify-mobile-case-scroll.cjs` 验证章节挂载数量与长滑稳定性。
+
 共享曲面转场位于 `public/project-transition.js` 和 `.css`。项目页导航位于 `public/projects/zhurong/assets/header.js`，首页导航位于 `src/navigation.js`，点击与页头遮罩同步位于 `src/header-scroll.js`。
 
 ## 验证

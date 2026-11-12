@@ -8,7 +8,7 @@
  const pointer=wrap(hero.querySelector('.monitor-artboard'),'monitor-hero-pointer');
  const scroll=wrap(pointer,'monitor-hero-scroll');
  const entrance=wrap(scroll,'monitor-hero-enter');
- const entries=[...document.querySelectorAll('.monitor-case-section')].map(section=>{
+ const entries=[...document.querySelectorAll(document.documentElement.classList.contains('case-mobile-reading')?'.no-mobile-chapter-motion':'.monitor-case-section')].map(section=>{
   const enter=document.createElement('div');enter.className='monitor-section-enter';enter.append(...section.childNodes);
   const exit=document.createElement('div');exit.className='monitor-section-exit';exit.append(enter);section.append(exit);
   return {section,enter,exit};

@@ -19,6 +19,8 @@ const routes = ['ZHURONG.html', 'M7-MONITOR.html'];
         await page.waitForTimeout(1000);
         const token = await page.evaluate(() => window.__scrollTestDocument = crypto.randomUUID());
         assert.equal(await page.evaluate(() => getComputedStyle(document.documentElement).overscrollBehaviorY), 'none');
+        assert(await page.evaluate(()=>document.documentElement.classList.contains('case-mobile-reading')));
+        assert.equal(await page.locator('.zhurong-case-canvas,.monitor-case-canvas').count(),0,'Phone retained the full Figma DOM');
         const cdp = await page.context().newCDPSession(page);
         // Native touch gestures through multiple chapters, in both directions.
         for (let pass = 0; pass < 2; pass++) {
@@ -37,7 +39,8 @@ const routes = ['ZHURONG.html', 'M7-MONITOR.html'];
         await page.waitForTimeout(300);
         const sources = await page.locator('img[srcset]').evaluateAll(images => images.filter(image => image.complete && image.currentSrc).map(image => image.currentSrc));
         assert(sources.length > 0);
-        assert(sources.every(source => /\/case-responsive\/[^/]+-(480|960|1440)\.webp$/.test(source)), 'Phone loaded desktop-size artwork');
+        assert(sources.every(source => /\/(?:case-responsive|case-mobile-chapters)\/[^/]+-(480|960|1440)\.webp$/.test(source)), 'Phone loaded desktop-size artwork');
+        assert(await page.locator('.case-mobile-chapter-image').count()<=12,'Distant chapters retained their images');
         // Simulate browser toolbar height changes midway through a long document.
         await page.evaluate(() => scrollTo({top:document.documentElement.scrollHeight*.65,behavior:'instant'}));
         for (const height of [744, 844, 744, 844]) {
@@ -54,7 +57,7 @@ const routes = ['ZHURONG.html', 'M7-MONITOR.html'];
           assert(await page.locator('.monitor-scroll-reveal-word').evaluateAll(elements => elements.every(element => getComputedStyle(element).filter === 'none')));
         }
         assert.deepEqual(errors, []); assert.deepEqual(missing, []);
-        console.log('PASS', route, 'DPR', dpr, '32 long touch gestures, chapter loading, toolbar resize, no reload/404/JS errors');
+        console.log('PASS', route, 'DPR', dpr, '32 long touch gestures, bounded chapters, toolbar resize, no reload/404/JS errors',await page.evaluate(()=>({nodes:document.querySelectorAll('*').length,mounted:document.querySelectorAll('.case-mobile-chapter-image').length})));
         await page.close();
       }
     }

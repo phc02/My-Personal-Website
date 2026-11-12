@@ -142,7 +142,7 @@
     const progress = intro?.progress || 0;
     exit = 1-clamp(progress/.075, 0, 1);
     const shown = ready && exit > .001 && !document.hidden
-      && !document.documentElement.classList.contains('loading')
+      && (!document.documentElement.classList.contains('loading') || window.__homeEntranceStarted)
       && !document.documentElement.classList.contains('project-transitioning')
       && !document.body.classList.contains('navigation-route') && !window.__navigationState?.().animating;
     if (shown !== wasShown) {
@@ -200,7 +200,8 @@
   addEventListener('pagehide', () => { cancelReplay(); entrance?.pause(); sleep(); });
   addEventListener('pageshow', wake);
   function start() {
-    if (!window.__introState?.().ready) { requestAnimationFrame(start); return; }
+    if (ready) { wake(); return; }
+    if (!window.__homeEntranceStarted && !window.__introState?.().ready) { requestAnimationFrame(start); return; }
     ready = true; measure();
     if (reduce.matches) {
       state.spread = 1; state.speed = 1; entranceDone = true;

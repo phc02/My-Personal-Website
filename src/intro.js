@@ -119,7 +119,7 @@
       timeline=gsap.timeline({onUpdate:updateMask,scrollTrigger:{trigger:'.intro',start:'top top',end:()=>`+=${Math.round(2.4*innerHeight)}`,scrub:reduced?true:.45,invalidateOnRefresh:true,onRefresh:updateMask}});
       timeline.to(mark,{scale:1.12,autoAlpha:0,duration:.35,ease:'power1.in'},0)
         .to(overlay,{autoAlpha:1,duration:.2,ease:'none'},.05)
-        .fromTo(circle,{radius:()=>$('.eye-tracker').clientWidth/2},{radius:()=>Math.hypot(innerWidth,innerHeight)/2+2,duration:2,ease:'power2.inOut'},0)
+        .fromTo(circle,{radius:()=>$('.eye-tracker').clientWidth/2},{radius:()=>Math.hypot($('.stage').clientWidth,$('.stage').clientHeight)/2+2,duration:2,ease:'power2.inOut'},0)
         .fromTo(heading,{y:reduced?0:24},{y:0,duration:.8,ease:'power1.out'},1)
         .to(titleChars,{color:'#0F0E11',duration:.4,ease:'none',stagger:{amount:1.1}},1.6)
         .to(bodyChars,{color:'#0F0E11',duration:.4,ease:'none',stagger:{amount:.9}},2.6)
@@ -139,6 +139,8 @@
   async function initialize(){
     await document.fonts.ready;
     const loaded = await (window.homeLoading || Promise.resolve(false));
+    window.__homeEntranceStarted=true;
+    window.dispatchEvent(new Event('homeentrancestart'));
     const finish=()=>{
       gsap.set('.site-credit,.navigate-toggle',{clearProps:'transform,opacity,visibility'});
       gsap.set(prompt,{autoAlpha:.85});
@@ -151,8 +153,8 @@
     entrance
       .fromTo('.site-credit,.navigate-toggle',{autoAlpha:0,y:-65},{autoAlpha:1,y:0,duration:.95,ease:'back.out(1.35)',stagger:.04},.05)
       .fromTo(prompt,{autoAlpha:0,y:65},{autoAlpha:.85,y:0,duration:.9,ease:'back.out(1.25)'},.18)
-      .fromTo('.home-corner-copy',{autoAlpha:0,y:12},{autoAlpha:1,y:0,duration:.7,ease:'power2.out'},.3);
+      .fromTo('.home-corner-copy',{autoAlpha:0,y:12},{autoAlpha:1,y:0,duration:.7,ease:'power2.out'},.05);
   }
   initialize();
-  window.__introState=()=>({ready:unlocked,progress:timeline?.progress()??0,duration:timeline?.duration(),scrollEnd:timeline?.scrollTrigger.end,circle:latestCircle,theme:Number(gsap.getProperty(overlay,'opacity'))>=.5?'light':'dark',phraseIndex:0,phraseRotationActive:false});
+  window.__introState=()=>({ready:unlocked,aboutRevealed,progress:timeline?.progress()??0,duration:timeline?.duration(),scrollEnd:timeline?.scrollTrigger.end,circle:latestCircle,theme:Number(gsap.getProperty(overlay,'opacity'))>=.5?'light':'dark',phraseIndex:0,phraseRotationActive:false});
 })();
