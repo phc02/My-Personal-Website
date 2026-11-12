@@ -69,6 +69,25 @@ export async function optimizeBuild(root) {
       }
       // Continue to honor the user's exact original images; only lossless variants are substituted.
       for (const [original, variant] of Object.entries(variants)) html = html.replaceAll(prefix + original, prefix + variant);
+      // Hosted builds can load large videos from R2.
+const videoBase = process.env.VIDEO_ASSET_BASE_URL?.trim().replace(/\/+$/, '');
+
+if (!local && videoBase) {
+  if (new URL(videoBase).protocol !== 'https:') {
+    throw new Error('VIDEO_ASSET_BASE_URL must use HTTPS');
+  }
+
+  for (const filename of [
+    '（宣讲）视频演示.mp4',
+    '小米汽车M7原型演示.mp4',
+    '无感设计演示视频-web.mp4',
+  ]) {
+    html = html.replaceAll(
+      `assets/${filename}`,
+      `${videoBase}/${encodeURIComponent(filename)}`,
+    );
+  }
+}
       const continuation = [html.indexOf('zhurong-followups:start'), html.indexOf('monitor-followups'), html.indexOf('id="twin-development-flow"')].filter(n => n >= 0);
       const belowFold = continuation.length ? Math.min(...continuation) : Infinity;
       html = html.replace(/<img\b[^>]*>/g, (tag, offset) => {
