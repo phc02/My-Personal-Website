@@ -1,0 +1,59 @@
+[
+  {
+    "route": "/index.html?project-section=work",
+    "initial": {
+      "domInteractive": 43,
+      "domContentLoaded": 264,
+      "transferBytes": 17404,
+      "longTasks": 2,
+      "maxLongTask": 115,
+      "longTaskTotal": 170,
+      "maxFrameGap": 212
+    },
+    "menu": {
+      "longTasks": 0,
+      "maxLongTask": 0,
+      "longTaskTotal": 0,
+      "maxFrameGap": 21,
+      "framesOver50": 0
+    }
+  },
+  {
+    "route": "/M7-MONITOR.html",
+    "initial": {
+      "domInteractive": 26,
+      "domContentLoaded": 244,
+      "transferBytes": 160705,
+      "longTasks": 4,
+      "maxLongTask": 155,
+      "longTaskTotal": 419,
+      "maxFrameGap": 154
+    },
+    "menu": {
+      "longTasks": 0,
+      "maxLongTask": 0,
+      "longTaskTotal": 0,
+      "maxFrameGap": 54,
+      "framesOver50": 1
+    }
+  },
+  {
+    "route": "/ZHURONG.html",
+    "initial": {
+      "domInteractive": 1313,
+      "domContentLoaded": 1471,
+      "transferBytes": 153880,
+      "longTasks": 2,
+      "maxLongTask": 102,
+      "longTaskTotal": 153,
+      "maxFrameGap": 1297
+    },
+    "menu": {
+      "longTasks": 0,
+      "maxLongTask": 0,
+      "longTaskTotal": 0,
+      "maxFrameGap": 21,
+      "framesOver50": 0
+    }
+  }
+]

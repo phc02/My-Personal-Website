@@ -1,0 +1,19 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="104" height="373" viewBox="0 0 104 373" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 2147225878">
+<g id="Ellipse 33697913" filter="url(#filter0_f_0_23)">
+<circle cx="52" cy="321" r="12" fill="#7248FC"/>
+</g>
+<path id="Vector 6538" d="M52 301V298.5M52 1V3.5M52 291V286M52 278.5V273.5M52 266V261M52 253.5V248.5M52 241V236M52 228.5V223.5M52 216V211M52 203.5V198.5M52 191V186M52 178.5V173.5M52 166V161M52 153.5V148.5M52 141V136M52 128.5V123.5M52 116V111M52 103.5V98.5M52 91V86M52 78.5V73.5M52 66V61M52 53.5V48.5M52 41V36M52 28.5V23.5M52 16V11" stroke-width="2" stroke-linecap="round" stroke="url(#paint0_linear_0_23)"/>
+</g>
+<defs>
+<filter id="filter0_f_0_23" x="0" y="269" width="104" height="104" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="20" result="effect1_foregroundBlur_0_23"/>
+</filter>
+<linearGradient id="paint0_linear_0_23" x1="52.5" y1="301" x2="52.5" y2="1" gradientUnits="userSpaceOnUse">
+<stop stop-color="#7449FF"/>
+<stop offset="1" stop-color="#7449FF" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

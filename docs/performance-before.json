@@ -1,0 +1,62 @@
+[
+  {
+    "route": "/index.html?project-section=work",
+    "elapsed": 4469,
+    "initial": {
+      "domInteractive": 27,
+      "domContentLoaded": 264,
+      "transferBytes": 15560,
+      "longTasks": 8,
+      "maxLongTask": 132,
+      "longTaskTotal": 692,
+      "maxFrameGap": 218
+    },
+    "menu": {
+      "longTasks": 0,
+      "maxLongTask": 0,
+      "longTaskTotal": 0,
+      "maxFrameGap": 17,
+      "framesOver50": 0
+    }
+  },
+  {
+    "route": "/M7-MONITOR.html",
+    "elapsed": 5737,
+    "initial": {
+      "domInteractive": 1558,
+      "domContentLoaded": 1561,
+      "transferBytes": 95852570,
+      "longTasks": 5,
+      "maxLongTask": 108,
+      "longTaskTotal": 392,
+      "maxFrameGap": 158
+    },
+    "menu": {
+      "longTasks": 0,
+      "maxLongTask": 0,
+      "longTaskTotal": 0,
+      "maxFrameGap": 4,
+      "framesOver50": 0
+    }
+  },
+  {
+    "route": "/ZHURONG.html",
+    "elapsed": 7599,
+    "initial": {
+      "domInteractive": 3094,
+      "domContentLoaded": 3098,
+      "transferBytes": 142275017,
+      "longTasks": 3,
+      "maxLongTask": 906,
+      "longTaskTotal": 1077,
+      "maxFrameGap": 1279
+    },
+    "menu": {
+      "longTasks": 0,
+      "maxLongTask": 0,
+      "longTaskTotal": 0,
+      "maxFrameGap": 17,
+      "framesOver50": 0
+    }
+  }
+]

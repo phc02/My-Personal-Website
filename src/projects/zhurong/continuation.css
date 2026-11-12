@@ -1,0 +1,15 @@
+.zhurong-followups{position:relative;z-index:2;margin-top:-100svh;width:100%;background:#000;color:#fff;visibility:hidden;opacity:0;font-family:ZhurongMiSans,"Microsoft YaHei",sans-serif;display:flow-root}
+.zhurong-case-section{position:relative;width:100%;overflow:hidden;isolation:isolate;background:#000}
+.zhurong-case-canvas{position:absolute;left:0;top:0;width:1920px;transform:scale(var(--zhurong-case-scale,1));transform-origin:top left;font-weight:400;line-height:1.5}
+:where(.zhurong-case-canvas *){box-sizing:border-box;border-width:0;border-style:solid}
+.zhurong-case-canvas p{margin:0}
+.zhurong-case-canvas img{display:block;max-width:none;vertical-align:middle}
+.zhurong-case-canvas [data-node-id="3985:9001"]{background:#070707}
+@media(prefers-reduced-motion:reduce){.zhurong-followups{visibility:visible;opacity:1;margin-top:0}}
+
+.zhurong-case-canvas [data-node-id="3985:9818"]{mix-blend-mode:normal}
+.zhurong-exact-artboard{position:absolute;inset:0;width:100%;height:100%;display:block}
+.zhurong-exact-hero{position:absolute;left:0;top:0;width:100%;height:auto;display:block;z-index:3;pointer-events:none}
+.zhurong-reference-copy{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+.zhurong-design-value-copy{position:absolute;left:3.33333333%;top:94.51204963%;width:74.58333333%;margin:0;color:#fff;font-family:ZhurongMiSans,"Microsoft YaHei",sans-serif;font-size:1.04166667vw;font-weight:400;line-height:1.5625vw;white-space:nowrap}

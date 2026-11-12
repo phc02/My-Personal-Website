@@ -1,0 +1,27 @@
+/* Envelope layers are original assets from Reverse UI's Interactive Envelope. */
+.resume-entry{position:absolute;left:61%;top:calc(12% + 20px);width:clamp(128px,12.75vw,179px);aspect-ratio:170/145;z-index:4;padding:0;border:0;background:none;pointer-events:auto;cursor:pointer;opacity:0;visibility:hidden;perspective:650px;-webkit-tap-highlight-color:transparent}
+.resume-entry:focus-visible{outline:2px solid #111;outline-offset:8px;border-radius:10px}
+.resume-envelope-art{display:block;position:absolute;inset:0;transform-origin:50% 60%;isolation:isolate}
+.resume-envelope-art>*{position:absolute;pointer-events:none}
+.resume-envelope-back{left:7.65%;top:4.14%;width:84.7%;height:66.2%;background:#eeeff0;border:1px solid #e1e2e5;border-radius:4px;z-index:0}
+.resume-envelope-flap{left:0;top:4.1%;width:100%;height:97.93%;transform-origin:50% .3px;z-index:5;backface-visibility:visible}
+.resume-envelope-front{inset:0;width:100%;height:100%;z-index:3}
+.resume-envelope-stamp{left:50%;top:39.66%;width:34.12%;height:auto;z-index:6;translate:-50% -50%}
+.resume-envelope-label{left:17%;top:62%;width:66%;z-index:6;font:500 clamp(8px,.75vw,10px)/1.1 SpaceGrotesk,Arial,sans-serif;letter-spacing:.12em;color:#40444a;text-align:center}
+html.resume-view-open{overflow:hidden!important}
+.resume-dialog{position:fixed;inset:0;width:100%;height:100svh;height:100dvh;max-width:none;max-height:none;padding:0;margin:0;border:0;overflow:hidden;background:transparent;color:white}
+.resume-dialog::backdrop{background:transparent}
+.resume-shade{position:absolute;inset:0;background:rgba(16,17,19,.78);backdrop-filter:blur(8px);opacity:0}
+.resume-scroll{position:absolute;inset:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#aaa transparent}
+.resume-content{position:relative;min-width:100%;min-height:100%}
+.resume-sheet{position:absolute;display:block;margin:0;padding:0;border:0;background:white;box-shadow:0 24px 90px #0005;transform-origin:center;cursor:pointer;overflow:hidden}
+.resume-sheet img{display:block;width:100%;height:100%;object-fit:contain;user-select:none}
+.resume-sheet:focus-visible{outline:2px solid white;outline-offset:5px}
+.resume-cursor{position:fixed;top:0;left:0;z-index:4;display:grid;place-items:center;width:68px;height:68px;border-radius:50%;background:#111;box-shadow:0 8px 28px #0002;pointer-events:none;visibility:hidden;opacity:0;translate:-50% -50%;scale:.82;transition:opacity .16s,scale .24s cubic-bezier(.22,1,.36,1)}
+.resume-cursor img{width:26px;height:26px;filter:invert(1)}
+.resume-cursor.is-visible{opacity:1;visibility:visible;scale:1}
+@media(hover:hover) and (pointer:fine){.resume-sheet{cursor:none}}
+@media(max-width:767px){.resume-entry{top:43%;left:28%;width:clamp(110px,25.5vw,145px)}.resume-envelope-label{font-size:8px}}
+@media(max-width:767px) and (max-height:680px){.resume-entry{top:58px;left:60%;right:auto;width:85px}.resume-envelope-label{font-size:6px}}
+@media(hover:none),(pointer:coarse){.resume-cursor{display:none}}
+@media(prefers-reduced-motion:reduce){.resume-cursor{transition:none}}

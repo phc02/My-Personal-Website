@@ -1,0 +1,29 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="884" height="516.763" viewBox="0 0 884 516.763" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Subtract" filter="url(#filter0_fn_0_26)">
+<path d="M872 444.763C872 477.9 845.137 504.763 812 504.763H72C38.8629 504.763 12 477.9 12 444.763V12C125.315 62.1574 276.266 92.7627 442 92.7627C607.734 92.7627 758.685 62.1574 872 12V444.763Z" fill="url(#paint0_linear_0_26)"/>
+</g>
+<defs>
+<filter id="filter0_fn_0_26" x="0" y="0" width="884" height="516.763" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="0" result="effect1_foregroundBlur_0_26"/>
+<feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3" result="noise" seed="2281" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="effect1_foregroundBlur_0_26" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.5)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect2_noise_0_26">
+<feMergeNode in="effect1_foregroundBlur_0_26" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<linearGradient id="paint0_linear_0_26" x1="442" y1="-315.238" x2="442" y2="504.762" gradientUnits="userSpaceOnUse">
+<stop offset="0.472388" stop-color="#10101C" stop-opacity="0"/>
+<stop offset="0.860577" stop-color="#5425E2"/>
+<stop offset="1" stop-color="#8E7DFE"/>
+</linearGradient>
+</defs>
+</svg>

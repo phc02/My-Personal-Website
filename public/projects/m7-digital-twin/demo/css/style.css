@@ -1,0 +1,338 @@
+/* 修改原有基础容器，加入 position: relative */
+html, body, #container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0B0E12;
+  position: relative; 
+}
+
+/* 强制覆盖高德地图底层容器的默认浅色背景，从根源消除 3D 倾斜时的远端白边 */
+.amap-container,
+.amap-maps,
+.amap-layer,
+.amap-layer canvas {
+  background-color: #0B0E12 !important;
+  background-image: none !important;
+}
+
+/* 保留顶部渐变遮罩，使地平线与背景的融合更加深邃无缝 */
+#container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25%; 
+  background: linear-gradient(to bottom, rgba(11, 14, 18, 1) 0%, rgba(11, 14, 18, 0.8) 15%, rgba(11, 14, 18, 0) 100%);
+  pointer-events: none; 
+  z-index: 150; 
+}
+
+/* === 行政区铭牌样式 === */
+.custom-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: bottom center; 
+  pointer-events: none; 
+}
+
+/* 【新增】行政区铭牌生长动画包裹层 */
+.district-grow-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: bottom center;
+  opacity: 0;
+  animation: coneGrowUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s forwards;
+}
+
+.marker-box {
+  background-color: #1a1f24; 
+  border: 1.5px solid #4FECF7;
+  border-radius: 8px;         
+  padding: 6px 12px;          /* 增大内边距，原为 4px 10px */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); 
+  white-space: nowrap;
+}
+
+.marker-title {
+  color: #4FECF7;
+  font-size: 16px;            /* 增大主标题字号，原为 14px */
+  font-weight: 600;
+  letter-spacing: 1.5px;      /* 稍微增加字间距 */
+  margin-bottom: 4px;         /* 增加上下行间距，原为 2px */
+  font-family: sans-serif;
+}
+
+.marker-sub {
+  color: #5C9E9F; 
+  font-size: 12px;            /* 增大副标题字号，原为 10px */
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+.marker-highlight {
+  color: #FF4D4F;
+}
+
+.marker-line {
+  width: 2px;                  
+  height: 95px;               
+  margin: 4px auto 0 auto; 
+  background: repeating-linear-gradient(to bottom, #4FECF7, #4FECF7 4px, transparent 4px, transparent 8px);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+
+/* === 小米M7工厂 SVG 光柱与铭牌样式 === */
+.m7-marker-container {
+  position: relative;
+  width: 200px;  /* 原为 100px，放大2倍 */
+  height: 260px; /* 原为 130px，放大2倍 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.m7-label-text {
+  font-size: 24px; /* 原为 14px，等比放大增强视觉屏效 */
+  font-weight: 900;
+  color: #ffffff;
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  text-shadow: 
+    2px 2px 0 #0f1626, -2px -2px 0 #0f1626, 
+    2px -2px 0 #0f1626, -2px 2px 0 #0f1626,
+    0px 4px 0 #0f1626, 0px 5px 10px rgba(0, 0, 0, 0.9);
+  letter-spacing: 1px;
+  position: absolute;
+  top: 20px; /* 原为 10px，等比下移 */
+  z-index: 2;
+  white-space: nowrap;
+  transform-origin: center center; 
+  transition: transform 0.1s ease-out; 
+}
+
+.m7-svg-cone {
+  position: absolute;
+  bottom: -10px; /* 原为 -5px，等比修正底部溢出 */
+  width: 200px;  /* 原为 100px */
+  height: 180px; /* 原为 90px */
+  z-index: 1;
+  transform-origin: bottom center; 
+  animation: coneGrowUp 2.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+/* === 供应商基础微缩光柱样式 === */
+.sup-marker-container {
+  position: relative; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  transform-origin: bottom center; 
+  pointer-events: none;
+}
+
+.sup-svg-cone {
+  width: 68px;   
+  height: 40px;  
+  transform-origin: bottom center; 
+  animation: coneGrowUp 2.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; 
+}
+
+/* === 异常供应商 贴纸文案样式 === */
+.sup-abnormal-label {
+  position: absolute;
+  bottom: 40px; 
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-weight: 900; 
+  line-height: 1.1;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  z-index: 10;
+  opacity: 0;
+  animation: labelPopUp 0.5s ease-out 0.3s forwards; 
+}
+
+.sup-abnormal-line1 {
+  font-size: 12px; 
+  color: #FFFFFF;
+  -webkit-text-stroke: 0.3px #15181E; 
+  text-shadow:
+    -2px -2px 0 #15181E,  2px -2px 0 #15181E,
+    -2px  2px 0 #15181E,  2px  2px 0 #15181E,
+    -2px  0   0 #15181E,  2px  0   0 #15181E,
+     0   -2px 0 #15181E,  0    2px 0 #15181E,
+     0px  3px 8px rgba(0,0,0,0.8);
+}
+
+.sup-abnormal-line2 {
+  font-size: 10px; 
+  color: #FF3B30; 
+  margin-top: 2px; 
+  -webkit-text-stroke: 0.3px #15181E;
+  text-shadow:
+    -2px -2px 0 #15181E,  2px -2px 0 #15181E,
+    -2px  2px 0 #15181E,  2px  2px 0 #15181E,
+    -2px  0   0 #15181E,  2px  0   0 #15181E,
+     0   -2px 0 #15181E,  0    2px 0 #15181E;
+}
+
+/* === 车辆相关样式 === */
+
+/* 1. 正常车辆 */
+.vehicle-normal-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #00FFCC;
+  border-radius: 50%;
+  /* 移除延迟，立刻开始 0.3s 的淡入 */
+  animation: vehicleFadeIn 0.3s ease-in both;
+}
+
+/* 修改异常车辆外层容器，移除之前的 animation */
+.vehicle-abnormal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: bottom center;
+  pointer-events: none;
+  /* 取消这里的 animation 属性，确保子元素红点和引线不受缩放影响 */
+}
+
+/* 新增铭牌专属的自下而上生长关键帧[cite: 1] */
+@keyframes plateGrowUp {
+  0% { 
+    transform: scale(0); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+
+/* 将生长动画转移到具体的铭牌盒子上 */
+.vehicle-abnormal-box {
+  background-color: #4C191C; 
+  border-radius: 6px;        
+  padding: 4px 10px;         
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
+  white-space: nowrap;
+  
+  /* 新增：设定变换基点为底部中心 */
+  transform-origin: bottom center; 
+  /* 新增：添加 0.3s 延迟，使用 both 确保在等待期间保持 opacity: 0 和 scale(0) 的初始状态 */
+  animation: plateGrowUp 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s both;
+}
+
+.vehicle-abnormal-plate {
+  color: #FFFFFF;
+  font-size: 12px;           /* 缩小车牌号字体，原为 16px */
+  font-weight: bold;
+  font-family: 'PingFang SC', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 2px;        /* 缩小两行文字间距 */
+}
+
+.vehicle-abnormal-desc {
+  color: #B3AAAA;
+  font-size: 10px;           /* 缩小故障描述字体，原为 12px */
+  font-family: 'PingFang SC', sans-serif;
+}
+
+/* 异常车辆引线 */
+.vehicle-abnormal-line {
+  width: 1.5px;              
+  height: 25px;              
+  background: #FF4D4F; 
+  /* 移除延迟 */
+  animation: vehicleFadeIn 0.3s ease-in both;
+}
+
+/* 异常车辆红点 */
+.vehicle-abnormal-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #FF4D4F;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #FF4D4F;
+  /* 移除延迟 */
+  animation: vehicleFadeIn 0.3s ease-in both;
+}
+
+
+/* === 定义公共关键帧动画 === */
+@keyframes coneGrowUp {
+  0% { transform: scaleY(0); opacity: 0; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes labelPopUp {
+  0% { transform: translateX(-50%) translateY(10px); opacity: 0; }
+  100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+/* 新增车辆基础样式显现的淡入动画 */
+@keyframes vehicleFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* === 小米M7工厂 贴地波纹包裹层 === */
+.m7-wave-wrapper {
+  position: absolute;
+  bottom: 17px;     /* 原为 9px。经计算：新光锥高180px，底部对齐中心点像素级修正为 17px */
+  left: 50%;
+  width: 0;        
+  height: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 独立波纹图层 */
+.m7-giant-wave {
+  position: absolute;
+  top: -100px;  /* 原为 -50px，保证大波纹圆心依然居中 */
+  left: -100px; /* 原为 -50px */
+  width: 200px;  /* 原为 100px，基础波纹随之放大2倍 */
+  height: 200px; /* 原为 100px */
+  border-radius: 50%;
+  border: 3px solid #5970F3;
+  background: radial-gradient(circle, rgba(27, 51, 196, 0.3) 0%, rgba(27, 51, 196, 0) 75%);
+  box-shadow: 0 0 25px rgba(27, 51, 196, 0.9), inset 0 0 15px rgba(27, 51, 196, 0.6);
+  
+  opacity: 0;
+  transform: scale(0.1) scaleY(0.35);
+}
+
+/* 三阶等比时差交替 */
+/* 【修复点2】在动画简写末尾加上 backwards 或 both 属性，确保在 delay 等待期提前锁定 0% 关键帧的状态 */
+.wave-stage1 { animation: m7EpicGlobalPulse 1.8s cubic-bezier(0.1, 0.45, 0.55, 1) infinite both; }
+.wave-stage2 { animation: m7EpicGlobalPulse 1.8s cubic-bezier(0.1, 0.45, 0.55, 1) infinite both; animation-delay: 0.6s; }
+.wave-stage3 { animation: m7EpicGlobalPulse 1.8s cubic-bezier(0.1, 0.45, 0.55, 1) infinite both; animation-delay: 1.2s; }
+@keyframes m7EpicGlobalPulse {
+  0% {
+    /* 移除 translate，避免动画与绝对定位冲突 */
+    transform: scale(0.1) scaleY(0.35);
+    opacity: 1.0;
+  }
+  65% {
+    opacity: 0.8;
+  }
+  100% {
+    /* 将扩散规模控制在刚好 2.5 倍 */
+    transform: scale(1.5) scaleY(0.35);
+    opacity: 0;
+  }
+}

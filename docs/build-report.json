@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-11-12T07:22:57.008Z",
+  "pageSizes": [
+    {
+      "route": "SPECIAL-intro.html",
+      "before": 14963636,
+      "after": 17104
+    },
+    {
+      "route": "ZHURONG.html",
+      "before": 142726153,
+      "after": 153644
+    },
+    {
+      "route": "M7-MONITOR.html",
+      "before": 95854463,
+      "after": 160405
+    },
+    {
+      "route": "M7-DIGITAL-TWIN.html",
+      "before": 4003265,
+      "after": 11719
+    },
+    {
+      "route": "INVISIBLE-DESIGN.html",
+      "before": 224595,
+      "after": 7045
+    },
+    {
+      "route": "DYSLEXIA.html",
+      "before": 221181,
+      "after": 7228
+    }
+  ],
+  "deployFiles": 352,
+  "deployBytes": 207547226,
+  "removedFiles": 210,
+  "removedBytes": 445155670
+}

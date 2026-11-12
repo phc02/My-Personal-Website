@@ -1,0 +1,12 @@
+<section class="invisible-video-section" aria-label="无感设计分享视频">
+  <video id="invisible-video" class="invisible-video" controls autoplay muted loop playsinline preload="auto" aria-label="无感设计分享演示视频">
+    <source src="{{invisible-video}}" type="video/mp4">
+    您的浏览器不支持视频播放，请<a href="{{invisible-video}}">打开演示视频</a>。
+  </video>
+  <button class="invisible-video-toggle" type="button" aria-label="暂停视频" aria-controls="invisible-video" hidden>
+    <span class="invisible-touch-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+  </button>
+  <button class="invisible-sound-toggle" type="button" aria-label="开启视频声音" aria-pressed="false" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path class="invisible-sound-off" d="m16 9 6 6m0-6-6 6"/><path class="invisible-sound-on" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>
+  </button>
+</section>

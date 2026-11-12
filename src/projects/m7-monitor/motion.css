@@ -1,0 +1,12 @@
+.monitor-detail{background:#000}
+.monitor-hero-enter,.monitor-hero-scroll,.monitor-hero-pointer{position:absolute;inset:0;pointer-events:none}
+.monitor-hero-enter{z-index:0}
+.monitor-meta{z-index:1}
+.monitor-hero-pointer .monitor-artboard{z-index:0}
+.monitor-hero-pointer{transform-origin:50% 55%}
+.monitor-section-exit,.monitor-section-enter{position:absolute;inset:0;transform-origin:50% 30%}
+.monitor-read-progress{position:fixed;left:0;right:0;top:0;height:2px;background:#f3f4ef;transform:scaleX(0);transform-origin:0 50%;z-index:102;pointer-events:none;opacity:.75}
+.navigation-route .monitor-read-progress,.project-transitioning .monitor-read-progress{opacity:0}
+.monitor-scroll-reveal-text{display:block;transform-origin:0 50%}
+.monitor-scroll-reveal-word{display:inline-block}
+@media(prefers-reduced-motion:reduce){.monitor-read-progress{display:none}}

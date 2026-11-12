@@ -1,0 +1,20 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="155" height="346" viewBox="0 0 155 346" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 2147225937">
+<path id="Vector 6539" d="M154 1H151.52M52 270V267.456M52 259.822V254.733M52 247.1V242.011M52 234.378V229.289M52 221.656V216.567M52 208.933V203.844M52 196.211V191.122M52 183.489V178.4M52 170.767V165.678M52 158.044V152.956M52 145.322V140.233M52 132.6V127.511M52 119.878V114.789M52 107.156V102.067M52 94.4334V89.3445M52 81.7111V76.6223M52 68.9889V63.9001M52 56.2667V51.1778M52 43.5445V41C52 40.1557 52.0262 39.3175 52.0777 38.4862M53.2475 31.0495C53.6662 29.4137 54.1859 27.8183 54.7993 26.2703M58.2224 19.5645C59.1235 18.1475 60.1113 16.7911 61.1784 15.5027M66.5027 10.1784C67.7911 9.11132 69.1475 8.12352 70.5645 7.22243M77.2703 3.79931C78.8183 3.18586 80.4137 2.66624 82.0495 2.24746M89.4862 1.07771C90.3175 1.02616 91.1557 1 92 1H94.48M101.92 1H106.88M114.32 1H119.28M126.72 1H131.68M139.12 1H144.08" stroke-width="2" stroke-linecap="round" stroke="url(#paint0_linear_0_4)"/>
+<g id="Ellipse 33697913" filter="url(#filter0_f_0_4)">
+<circle cx="52" cy="294" r="12" fill="#7248FC"/>
+</g>
+<path id="Subtract" d="M51.958 284C57.3171 284 61.7794 287.833 62.757 292.906C62.8692 293.489 62.3998 294 61.8065 294C61.2918 294 60.8657 293.611 60.758 293.108C59.8888 289.046 56.2794 286 51.958 286C47.6368 286 44.0284 289.046 43.1591 293.107C43.0513 293.611 42.625 294 42.1101 294C41.5164 294 41.0468 293.489 41.1591 292.906C42.1369 287.832 46.5991 284 51.958 284Z" fill="#7248FC"/>
+</g>
+<defs>
+<filter id="filter0_f_0_4" x="0" y="242" width="104" height="104" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="20" result="effect1_foregroundBlur_0_4"/>
+</filter>
+<linearGradient id="paint0_linear_0_4" x1="174" y1="-74.5" x2="55" y2="274.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#7449FF" stop-opacity="0"/>
+<stop offset="1" stop-color="#7449FF"/>
+</linearGradient>
+</defs>
+</svg>

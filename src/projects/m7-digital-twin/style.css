@@ -1,0 +1,53 @@
+.twin-detail{background:#000;overflow-x:hidden}
+.twin-detail .zhurong-page{padding-top:76px;width:100%;min-height:100svh;background:#000}
+.twin-section{position:relative;display:block;width:100%;margin:0;padding:0;background:#000;overflow:hidden}
+.twin-artboard{display:block;width:100%;height:auto;max-width:none;margin:0;user-select:none}
+.twin-flow-link{position:absolute;left:4.16666667%;bottom:calc(6.94444444% - 4px);display:flex;align-items:center;gap:16px;color:#fff;opacity:.45;font:400 20px/1.4 MonitorMiSans,"Microsoft YaHei",sans-serif;text-decoration:none;transition:opacity .2s ease}
+.twin-flow-link svg{display:block;width:14px;height:14px;flex:none;transform:rotate(0deg);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.twin-flow-link:hover,.twin-flow-link:focus-visible{opacity:1}
+.twin-flow-link:hover svg,.twin-flow-link:focus-visible svg{transform:rotate(45deg)}
+#twin-development-flow{scroll-margin-top:76px}
+@media(prefers-reduced-motion:reduce){.twin-flow-link,.twin-flow-link svg{transition:none}}
+.twin-screen-window{position:absolute;left:27.29166667%;top:18.88888889%;width:46.25%;height:40.13888889%;overflow:hidden;background:#000;border-radius:.41666667vw .41666667vw 0 0;clip-path:polygon(0 0,43.7% 0,43.7% 3.3%,56% 3.3%,56% 0,100% 0,100% 100%,0 100%)}
+/* The recording includes a 186px top matte in its 1440px frame. */
+.twin-screen-video{position:absolute;left:0;top:-14.84%;width:100%;height:114.84%;object-fit:cover;background:#000;display:block}
+.twin-accessible{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.twin-step-overlay{position:absolute;inset:0;z-index:2;pointer-events:none}
+.twin-step{position:absolute;display:flex;align-items:center;justify-content:space-between;box-sizing:border-box;padding:0 1.66666667vw;border:1px solid transparent;border-radius:999px;background:transparent;color:transparent;font:400 1.04166667vw/1 MonitorMiSans,"Microsoft YaHei",sans-serif;white-space:nowrap;cursor:pointer;pointer-events:auto;transition:background-color .18s ease,color .18s ease,border-color .18s ease}
+.twin-step:hover,.twin-step:focus-visible,.twin-step.is-active{background:#fff;color:#000;border-color:#fff;outline:none}
+.twin-step:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.twin-step-number{letter-spacing:.08em}
+.twin-tooltip{position:fixed;z-index:10000;width:min(360px,calc(100vw - 48px));transform:translate(-50%,-100%);pointer-events:none;font-family:MonitorMiSans,"Microsoft YaHei",sans-serif;visibility:hidden}
+.twin-tooltip[data-placement="below"]{transform:translateX(-50%)}
+.twin-tooltip-card{position:relative;padding:18px 20px;border:1px solid #ffffff35;border-radius:10px;background:#080808;color:#fff;box-shadow:0 12px 36px #0008;transform-origin:50% 100%;will-change:transform,opacity}
+.twin-tooltip-heading{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-size:14px;line-height:1.5;font-weight:500}
+.twin-tooltip-number{font:12px/1 Arial,sans-serif;color:#a8a8a8}
+.twin-tooltip-description{margin:0;color:#e0e0e0;font-size:13px;line-height:1.85;font-weight:400}
+.twin-tooltip-card::before,.twin-tooltip-card::after{content:"";position:absolute;bottom:-1px;height:1px;left:40px;width:20%;background:linear-gradient(90deg,transparent,#10b981,transparent)}
+.twin-tooltip-card::after{width:40%;background:linear-gradient(90deg,transparent,#0ea5e9,transparent)}
+@media(prefers-reduced-motion:reduce){.twin-step{transition:none}}
+
+.twin-flow-title{position:absolute;left:4.16666667%;top:6.08828006%;width:21%;height:3.04414003%;z-index:3;background:#000;color:#fff;font:400 1.25vw/2.08333333vw MonitorMiSans,"Microsoft YaHei",sans-serif;white-space:nowrap}
+.twin-experience-cursor{position:fixed;left:0;top:0;z-index:10001;pointer-events:none;visibility:hidden;will-change:transform}
+.twin-experience-cursor span{display:flex;align-items:center;justify-content:center;width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.9);color:#111;font:12px/1 Arial,sans-serif;transform:translate(-50%,-50%) scale(.92);opacity:0;transition:transform .35s cubic-bezier(.22,1,.36,1),opacity .2s ease}
+.twin-experience-cursor.is-visible{visibility:visible}
+.twin-experience-cursor.is-visible span{transform:translate(-50%,-50%) scale(1);opacity:1}
+.twin-experience-active .cursor-dot-trail{visibility:hidden!important}
+@media(hover:hover) and (pointer:fine){.twin-screen-window,.twin-screen-window *{cursor:none!important}}
+@media(prefers-reduced-motion:reduce){.twin-experience-cursor span{transition:none}}
+.twin-screen-window:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.twin-demo-dialog{position:fixed;inset:0;z-index:20000;overflow:hidden;background:#000;isolation:isolate}
+.twin-demo-scene{position:absolute;will-change:transform;pointer-events:none}
+.twin-demo-live{position:absolute;inset:0;z-index:2;overflow:hidden;visibility:hidden;will-change:clip-path}
+.twin-demo-frame{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;pointer-events:none;background:#0b0e12}
+.twin-demo-close{position:absolute;left:3.2vw;top:40px;z-index:4;width:clamp(44px,3.3vw,56px);height:clamp(44px,3.3vw,56px);padding:0;border:0;border-radius:50%;background:none;color:#fff;cursor:pointer;opacity:0;visibility:hidden}
+.twin-demo-close-face{position:relative;display:grid;place-items:center;width:100%;height:100%;border:1.5px solid #fff;border-radius:50%;overflow:hidden;isolation:isolate;transition:color .3s ease}
+.twin-demo-close-face::before{content:'';position:absolute;inset:-3px -35%;background:#fff;transform:translateX(-115%) skewX(-20deg);transition:transform .45s cubic-bezier(.22,1,.36,1);z-index:-1}
+.twin-demo-close svg{display:block;width:24px;height:24px}
+.twin-demo-close:hover .twin-demo-close-face,.twin-demo-close:focus-visible .twin-demo-close-face{color:#000}
+.twin-demo-close:hover .twin-demo-close-face::before,.twin-demo-close:focus-visible .twin-demo-close-face::before{transform:translateX(0) skewX(-20deg)}
+@media(prefers-reduced-motion:reduce){.twin-demo-close-face,.twin-demo-close-face::before{transition:none}}
+.twin-demo-close:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.twin-demo-status{position:absolute;left:50%;bottom:32px;transform:translateX(-50%);padding:8px 16px;border-radius:24px;background:#000b;color:#fff;font:12px/1.5 Arial,"Microsoft YaHei",sans-serif;z-index:3}
+.twin-demo-open{overflow:hidden!important}
+.twin-demo-open .cursor-dot-trail,.twin-demo-open .twin-experience-cursor{visibility:hidden!important}

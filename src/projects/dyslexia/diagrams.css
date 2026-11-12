@@ -1,0 +1,45 @@
+/* Reference: black editorial headings, split copy, complete full-width diagrams. */
+.dyslexia-detail:not(.navigation-route) .header-safety{background:transparent}
+.dyslexia-video-section{padding:0}
+.dyslexia-video-section .invisible-video{object-fit:cover;object-position:center bottom}
+.dyslexia-diagrams{background:#000;color:#e5e5e5;font-family:Arial,"Microsoft YaHei","PingFang SC",sans-serif}
+.dyslexia-diagram-heading{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:start;padding:clamp(72px,6vw,130px) 3.2vw clamp(80px,7vw,150px)}
+.dyslexia-diagram-heading h1,.dyslexia-diagram-heading h2{margin:0;color:#a5a5a5;font-size:clamp(42px,4.1vw,84px);font-weight:400;line-height:1.16;letter-spacing:-.045em}
+.dyslexia-diagram-copy{min-width:0;padding-top:3px}
+.dyslexia-diagram-copy p{margin:0;font-size:clamp(16px,1.1vw,23px);line-height:1.8;font-weight:400}
+.dyslexia-diagram-copy .dyslexia-diagram-label{margin-bottom:12px;color:#999;font-size:clamp(11px,.8vw,16px);line-height:1.4}
+@media(min-width:1280px){.dyslexia-diagram-heading{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}
+.dyslexia-diagram-media{padding:clamp(40px,4.3vw,100px) 4.3vw clamp(42px,4.5vw,100px);background:#0b0b0b}
+.dyslexia-diagram-media figure{margin:0}
+.dyslexia-diagram-open{display:block;width:100%;margin:0;padding:0;border:0;border-radius:12px;overflow:hidden;background:transparent;cursor:zoom-in}
+.dyslexia-diagram-open:focus-visible{outline:2px solid #fff;outline-offset:6px}
+.dyslexia-diagram-media img{display:block;width:100%;height:auto}
+.dyslexia-image-cursor{position:fixed;top:0;left:0;z-index:10000;pointer-events:none;visibility:hidden}
+.dyslexia-image-cursor.is-visible{visibility:visible}
+.dyslexia-image-cursor-disc{display:grid;place-items:center;width:68px;height:68px;background:#111;border-radius:50%;transform:translate(-50%,-50%) scale(.85);opacity:0;transition:transform .25s cubic-bezier(.22,1,.36,1),opacity .15s}
+.dyslexia-image-cursor.is-visible .dyslexia-image-cursor-disc{transform:translate(-50%,-50%) scale(1);opacity:1}
+.dyslexia-image-cursor img{width:24px;height:24px;filter:brightness(0) invert(1)}
+.dyslexia-image-cursor [data-icon="collapse"]{display:none}
+.dyslexia-image-cursor[data-mode="collapse"] [data-icon="expand"]{display:none}
+.dyslexia-image-cursor[data-mode="collapse"] [data-icon="collapse"]{display:block}
+.dyslexia-image-dialog{position:fixed;inset:0;width:100%;max-width:none;height:100dvh;max-height:none;margin:0;padding:0;border:0;background:transparent;color:white;overflow:hidden}
+.dyslexia-image-dialog::backdrop{background:transparent}
+.dyslexia-image-shade{position:absolute;inset:0;background:rgba(0,0,0,.92)}
+.dyslexia-image-stage{position:absolute;inset:0;display:grid;place-items:center;padding:44px 32px}
+.dyslexia-image-stage img{display:block;max-width:100%;max-height:calc(100dvh - 88px);width:auto;height:auto;object-fit:contain;cursor:zoom-out;transform-origin:center}
+html.dyslexia-image-open{overflow:hidden!important;scrollbar-gutter:stable}
+.dyslexia-image-open .cursor-dot-trail{visibility:hidden!important}
+@media(hover:hover) and (pointer:fine){.dyslexia-diagram-open,.dyslexia-diagram-open *,.dyslexia-image-stage,.dyslexia-image-stage img{cursor:none}}
+@media(hover:none),(pointer:coarse){.dyslexia-image-cursor{display:none}}
+@media(prefers-reduced-motion:reduce){.dyslexia-image-cursor-disc{transition:none}}
+@media(max-width:767px){
+ .dyslexia-diagram-heading{grid-template-columns:1fr;gap:32px;padding:64px 22px 60px}
+ .dyslexia-diagram-heading h1,.dyslexia-diagram-heading h2{font-size:40px}
+ .dyslexia-diagram-copy{padding:0}
+ .dyslexia-diagram-copy p{font-size:15px;line-height:1.9}
+ .dyslexia-diagram-copy .dyslexia-diagram-label{font-size:11px;margin-bottom:12px}
+ .dyslexia-diagram-media{padding:28px 22px 34px}
+ .dyslexia-diagram-open{border-radius:7px}
+ .dyslexia-image-stage{padding:60px 12px 24px}
+ .dyslexia-image-stage img{max-height:calc(100dvh - 84px)}
+}

@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "verify:navigation": "node scripts/verify-navigation.cjs",
+    "start": "node serve.mjs",
+    "check": "node scripts/check.mjs",
+    "profile": "node scripts/profile-navigation.cjs",
+    "build": "node build.mjs"
+  },
+  "description": "彭海朝的 UX / AI 体验设计个人作品集",
+  "version": "1.0.0",
+  "name": "peng-haichao-portfolio",
+  "private": true
+}

@@ -1,0 +1,16 @@
+dist/
+.tmp/
+node_modules/
+qa/*.png
+qa/*.jpg
+qa/*.jpeg
+qa/*.json
+/SPECIAL-intro.html
+/ZHURONG.html
+/M7-MONITOR.html
+/M7-DIGITAL-TWIN.html
+/INVISIBLE-DESIGN.html
+/DYSLEXIA.html
+public/generated/
+# Editable original; the tracked -web.mp4 derivative is used in deployment.
+public/assets/无感设计演示视频.mp4

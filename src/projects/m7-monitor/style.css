@@ -1,0 +1,11 @@
+/* Figma 3985:7877, reference frame 1920 × 1408. */
+.monitor-detail{background:#000;overflow-x:hidden}.monitor-detail main.zhurong-page{background:#000;min-height:100svh}
+.monitor-hero{position:relative;width:100%;height:100svh;min-height:500px;overflow:hidden;isolation:isolate;background:#000;font-family:MonitorMiSans,"Microsoft YaHei",sans-serif;color:#fff}
+.monitor-artboard{position:absolute;left:50%;top:50%;width:max(100vw,136.363636svh);height:max(73.333333vw,100svh);transform:translate(-50%,-50%);pointer-events:none;z-index:-1}
+.monitor-scene{position:absolute;left:-12.65625%;top:-14.133523%;width:125.3125%;height:128.196023%;max-width:none;object-fit:cover;user-select:none}
+.monitor-meta{position:absolute;left:1.25vw;right:1.25vw;top:calc(76px + 1.302083vw);display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:clamp(11px,1.041667vw,20px);font-weight:400;line-height:1}
+.monitor-project{display:flex;align-items:center;gap:1.25vw;min-width:0}.monitor-project h1{margin:0;font:inherit;white-space:nowrap}
+.monitor-logo{position:relative;width:2.5vw;height:2.5vw;min-width:24px;min-height:24px;overflow:hidden;flex-shrink:0}.monitor-logo img{position:absolute;left:-7.513%;top:11.785%;width:113.934%;height:77.682%;max-width:none;clip-path:inset(11.4% 23.9% 11.35% 23.95%)}
+.monitor-tags{display:flex;align-items:center;gap:1.666667vw;list-style:none;padding:0;margin:0;white-space:nowrap}.monitor-tags li{border:1px solid #fff;border-radius:38px;padding:.625vw 1.666667vw;line-height:1;min-height:24px;display:flex;align-items:center;justify-content:center}
+.monitor-detail .header-safety{background:linear-gradient(to bottom,rgba(0,0,0,.25),transparent)}
+@media(max-width:767px){.monitor-meta{left:22px;right:22px;top:84px;align-items:flex-start;flex-direction:column;gap:18px;font-size:12px}.monitor-project{gap:10px}.monitor-logo{width:28px;height:28px}.monitor-tags{gap:8px;flex-wrap:wrap;white-space:normal}.monitor-tags li{padding:8px 12px;min-height:30px}.monitor-hero{min-height:500px}}

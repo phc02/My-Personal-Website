@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN" class="loading">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0F0E11">
+  <meta name="description" content="彭海朝的个人作品集，关注用户体验设计、AI 体验设计与交互原型开发。">
+  <title>彭海朝 | UX / AI 体验设计作品集</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="resume-envelope.css"><link rel="stylesheet" href="project-transition.css"><script src="project-transition.js"></script>
+  <script defer src="vendor/gsap.min.js"></script>
+  <script defer src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="eye-tracker.js"></script>
+  <script defer src="loading.js"></script>
+  <script defer src="intro.js"></script>
+  <script defer src="resume-envelope.js"></script>
+  <script defer src="home-skills.js"></script>
+  <script defer src="cursor-dot-trail.js"></script>
+  <script defer src="navigation.js"></script>
+  <script defer src="header-magnet.js"></script>
+  <script defer src="header-scroll.js"></script>
+  <script defer src="work.js"></script>
+  <script defer src="vendor/ScrambleTextPlugin.min.js"></script>
+  <script defer src="contact-shape.js"></script>
+  <script defer src="contact.js"></script>
+</head>
+<body>
+          <header class="hero-header">
+            <button class="site-credit" type="button" aria-label="PengHaichao — Back to top"><span class="credit-window" aria-hidden="true"><span class="credit-track"><span class="credit-prefix">CODE BY </span><span class="credit-name">Peng<span class="credit-surname">Haichao</span></span></span></span></button>
+            <button class="navigate-toggle" type="button" aria-label="Navigate" aria-expanded="false" aria-controls="navigation-page"><span class="navigate-label"><span class="label-open">NAVIGATE</span><span class="label-close">CLOSE</span></span> <span class="menu-lines" aria-hidden="true"><i></i><i></i><i></i></span></button>
+          </header>
+  <main>
+    <section id="intro" class="intro" aria-label="Special introduction">
+      <span id="about" class="about-route-anchor" aria-hidden="true"></span>
+      <div class="stage">
+        <div class="hero">
+          <div class="hero-content">
+            <button class="brand" type="button" aria-label="点击让小球旋转">
+              <div class="mark-position"><div class="mark-art"><svg class="eye-tracker" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="eye-ball-clip"><circle cx="50" cy="50" r="50"/></clipPath></defs><circle cx="50" cy="50" r="50" fill="#FFFFFF"/><g clip-path="url(#eye-ball-clip)" fill="#0F0E11"><g class="eye" transform="translate(40.5 50)"><rect x="-6.075" y="-10.125" width="12.15" height="20.25" rx="6.075"/></g><g class="eye" transform="translate(59.5 50)"><rect x="-6.075" y="-10.125" width="12.15" height="20.25" rx="6.075"/></g></g></svg></div></div>
+            </button>
+          </div>
+          <div class="home-corner-copy" aria-label="设计方向与署名">
+            <p class="home-corner-group"><span class="home-corner-caption">DIRECTION</span><span class="home-corner-value"><span class="home-corner-phrase">用户体验设计</span> / <span class="home-corner-phrase">AI体验设计</span></span></p>
+            <p class="home-corner-group home-corner-group-right"><span class="home-corner-caption">SKILLS</span><span class="home-corner-value">@彭海朝</span></p>
+          </div>
+        </div>
+        <div class="introduction"><div class="about-layout">
+          <h1><span class="about-title-line">A UX DESIGNER <span class="about-title-slash">/</span></span><span class="about-title-line">CREATIVE TECHNOLOGIST <span class="about-title-slash">/</span></span><span class="about-title-line">AI EXPERIENCE DESIGN EXPLORER</span></h1>
+          <span class="about-label">[ 关于我 ]</span>
+          <button class="resume-entry" type="button" aria-label="打开我的简历" aria-haspopup="dialog" aria-controls="resume-dialog" data-resume-src="assets/彭海朝17501149766.png" data-collapse-icon="assets/resume-envelope/collapse.svg" disabled>
+            <span class="resume-envelope-art" aria-hidden="true">
+              <span class="resume-envelope-back"></span>
+              <img class="resume-envelope-flap" src="assets/resume-envelope/flap.svg" alt="" width="170" height="142">
+              <img class="resume-envelope-front" src="assets/resume-envelope/body.svg" alt="" width="170" height="145">
+              <img class="resume-envelope-stamp" src="assets/resume-envelope/stamp.png" alt="" width="58" height="58">
+              <span class="resume-envelope-label">MY RESUME</span>
+            </span>
+          </button>
+          <div class="about-copy" lang="zh-CN">
+            <p>我是彭海朝，2027届北京邮电大学数字媒体技术本科生，<br>我关注用户体验与 AI 体验设计。<br>从理解用户出发，用交互表达想法，用代码验证设计。技术背景让我能将构想落地，细致的观察让我在意体验中的每一个反馈。</p>
+            <p>我可以<br>理解需求——立足真实使用场景，在用户需求与业务目标之间找到设计的着力点。<br>打磨体验——以清晰的交互、恰当的动效，让用户体验多一点自然与趣味。<br>Coding创意——将想法做成可体验的原型，在验证中持续迭代，探索人与 AI 协作的新方式。</p>
+          </div>
+          <div class="about-portrait"><img src="assets/haichao.jpeg" alt="彭海朝的个人照片" width="5008" height="5008"></div>
+        </div></div>
+      </div>
+      <button class="scroll-prompt" type="button" aria-label="向下滚动，继续了解我"><svg class="scroll-mouse" width="30" height="46" viewBox="0 0 30 46" fill="none" aria-hidden="true"><rect x="1" y="1" width="28" height="44" rx="14" stroke="currentColor" stroke-width="2"/><g fill="currentColor"><circle class="scroll-dot" cx="15" cy="16" r="2"/><circle class="scroll-dot scroll-dot-delayed" cx="15" cy="16" r="2"/></g></svg></button>
+    </section>
+<section id="work" class="work-section" aria-label="精选项目"><header class="work-toolbar"><h2>WORK &amp; EXPERIENCE</h2><div class="work-view-icons" aria-label="项目展示方式"><button class="work-view-icon" type="button" data-work-view="list" aria-label="列表视图" aria-pressed="true" aria-controls="work-projects"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.4852 4.87499H7.88485C7.69773 4.87499 7.51827 4.80066 7.38595 4.66834C7.25363 4.53602 7.17929 4.35656 7.17929 4.16943C7.17929 3.9823 7.25363 3.80284 7.38595 3.67052C7.51827 3.5382 7.69773 3.46387 7.88485 3.46387H21.4852C21.5778 3.46384 21.6696 3.48208 21.7552 3.51752C21.8408 3.55297 21.9186 3.60494 21.9841 3.67047C22.0497 3.73599 22.1016 3.81378 22.1371 3.89939C22.1725 3.98501 22.1908 4.07677 22.1907 4.16943C22.1908 4.26209 22.1725 4.35385 22.1371 4.43947C22.1016 4.52508 22.0497 4.60287 21.9841 4.66839C21.9186 4.73392 21.8408 4.78589 21.7552 4.82133C21.6696 4.85678 21.5778 4.87502 21.4852 4.87499ZM21.4852 12.7318H7.88485C7.49523 12.7318 7.17929 12.4162 7.17929 12.0262C7.17929 11.6362 7.49523 11.3207 7.88485 11.3207H21.4852C21.8752 11.3207 22.1907 11.6362 22.1907 12.0262C22.1907 12.4162 21.8752 12.7318 21.4852 12.7318ZM21.4852 20.589H7.88485C7.6977 20.589 7.51822 20.5146 7.38588 20.3823C7.25354 20.25 7.1792 20.0705 7.1792 19.8833C7.1792 19.6962 7.25354 19.5167 7.38588 19.3844C7.51822 19.252 7.6977 19.1777 7.88485 19.1777H21.4852C21.8752 19.1777 22.1907 19.4932 22.1907 19.8832C22.1907 20.2732 21.8752 20.589 21.4852 20.589Z" fill="white"/><path d="M5.0569 4.87499H2.65634C2.46921 4.87499 2.28975 4.80066 2.15743 4.66834C2.02511 4.53602 1.95078 4.35656 1.95078 4.16943C1.95078 3.9823 2.02511 3.80284 2.15743 3.67052C2.28975 3.5382 2.46921 3.46387 2.65634 3.46387H5.0569C5.24403 3.46387 5.42349 3.5382 5.55581 3.67052C5.68813 3.80284 5.76246 3.9823 5.76246 4.16943C5.76246 4.35656 5.68813 4.53602 5.55581 4.66834C5.42349 4.80066 5.24403 4.87499 5.0569 4.87499ZM5.0569 12.7318H2.65634C2.26671 12.7318 1.95078 12.4162 1.95078 12.0262C1.95078 11.6362 2.26671 11.3207 2.65634 11.3207H5.0569C5.44653 11.3207 5.76246 11.6362 5.76246 12.0262C5.76246 12.4162 5.44653 12.7318 5.0569 12.7318ZM5.0569 20.589H2.65634C2.46919 20.589 2.2897 20.5146 2.15737 20.3823C2.02503 20.25 1.95068 20.0705 1.95068 19.8833C1.95068 19.6962 2.02503 19.5167 2.15737 19.3844C2.2897 19.252 2.46919 19.1777 2.65634 19.1777H5.0569C5.24405 19.1777 5.42354 19.252 5.55588 19.3844C5.68821 19.5167 5.76256 19.6962 5.76256 19.8833C5.76256 20.0705 5.68821 20.25 5.55588 20.3823C5.42354 20.5146 5.24405 20.589 5.0569 20.589Z" fill="white"/></svg></button><button class="work-view-icon" type="button" data-work-view="grid" aria-label="网格视图" aria-pressed="false" aria-controls="work-projects"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#work-grid-clip)"><rect x="1" y="1" width="8" height="8" rx="1" stroke-width="1.5" stroke="white"/><rect x="1" y="15" width="8" height="8" rx="1" stroke-width="1.5" stroke="white"/><rect x="15" y="1" width="8" height="8" rx="1" stroke-width="1.5" stroke="white"/><rect x="15" y="15" width="8" height="8" rx="1" stroke-width="1.5" stroke="white"/></g><defs><clipPath id="work-grid-clip"><rect width="24" height="24" fill="white"/></clipPath></defs></svg></button></div></header><ol class="work-list" id="work-projects"><li class="work-row"><h3>“铸融”全域无人化<br>超级大压铸智能生产系统</h3><div class="work-meta"><span>北京小米移动软件有限公司</span><span class="work-date">2026/01—2026/09</span></div><span class="work-category">AI 对话体验设计</span></li><li class="work-row"><h3>小米汽车M7<br>供应看板实时监控</h3><div class="work-meta"><span>北京小米移动软件有限公司</span><span class="work-date">2026/01—2026/09</span></div><span class="work-category">交互设计</span></li><li class="work-row"><h3>小米汽车M7<br>供应看板数字孪生交互原型</h3><div class="work-meta"><span>北京小米移动软件有限公司</span><span class="work-date">2026/01—2026/09</span></div><span class="work-category">交互原型开发</span></li><li class="work-row"><h3>无感设计分享</h3><div class="work-meta"><span>北京小米移动软件有限公司</span><span class="work-date">2026/01—2026/09</span></div><span class="work-category">手势控制交互 Demo</span></li><li class="work-row"><h3>触解迷障-<br>阅读障碍模拟认知平台</h3><div class="work-meta"><span>北京邮电大学</span><span class="work-date">2025/01—2025/06</span></div><span class="work-category">阅读障碍科普交互体验</span></li></ol>
+<p class="work-contact-note">如果您对这些项目感兴趣，或希望了解更多详情，欢迎随时与我联系！</p>
+<svg class="work-contact-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<path d="M20 37.5C10.35 37.5 2.5 29.65 2.5 20C2.5 10.35 10.35 2.5 20 2.5C29.65 2.5 37.5 10.35 37.5 20C37.5 29.65 29.65 37.5 20 37.5ZM20 5C11.7287 5 5 11.7287 5 20C5 28.2713 11.7287 35 20 35C28.2713 35 35 28.2713 35 20C35 11.7287 28.2713 5 20 5Z" fill="white" fill-opacity="0.45"/>
+<path d="M27.1311 20.3976C26.6411 19.9051 25.8274 19.9038 25.3361 20.3951L21.2498 24.4538V12.475C21.2498 11.7813 20.6948 11.2188 19.9998 11.2188C19.3061 11.2188 18.7498 11.7812 18.7498 12.475V24.5188L14.6398 20.3513C14.1523 19.8588 13.3623 19.8537 12.8698 20.3412C12.376 20.83 12.3748 21.6262 12.8623 22.1188L19.0872 28.41C19.3322 28.6575 19.6572 28.7837 19.981 28.7837C20.2998 28.7837 20.621 28.66 20.8647 28.42C20.866 28.4175 20.866 28.4175 20.8672 28.415C20.8685 28.415 20.8697 28.415 20.871 28.4125L27.1285 22.1751C27.6199 21.6851 27.6211 20.8888 27.1311 20.3976Z" fill="white" fill-opacity="0.45"/>
+</svg></section>
+    <section id="work-end" class="work-end" aria-label="Contact">
+      <span id="contact" class="contact-route-anchor" aria-hidden="true"></span>
+      <div class="contact-lead-space">
+        <div class="contact-intro-heading">
+          <p class="contact-kicker">LET’S CONNECT</p>
+          <h2>让复杂的问题，<br>变成自然的体验。</h2>
+        </div>
+        <div class="contact-intro-details">
+          <p class="contact-intro-description">我是彭海朝，我关注 AI 产品与用户体验设计，期待参与有挑战、也有实际价值的项目。</p>
+          <p class="contact-opportunity">2027 届 · 用户体验 / AI 体验设计</p>
+        </div>
+      </div>
+      <div class="contact-home-cta" aria-label="向下滚动展开 DESIGN，显现 CONTACT ME">
+        <h2 class="contact-sr-only">Contact me</h2>
+        <div class="contact-word"></div>
+      </div>
+      <div class="contact-end-space" aria-hidden="true"></div>
+      <footer class="contact-footer">
+        <div class="contact-credit"><span class="contact-footer-caption">[ DESIGN &amp; DEVELOPMENT ]</span><span>@PengHaichao</span></div>
+        <div class="contact-details"><span class="contact-footer-caption">Looking forward to cooperating with you.</span><a href="mailto:17501149766@163.com">17501149766@163.com</a></div>
+        <img class="contact-qr" src="assets/微信二维码.png" alt="彭海朝的微信二维码，扫码添加微信" width="648" height="648">
+      </footer>
+    </section>
+  </main>
+  <section id="navigation-page" class="navigation-page" aria-label="Navigation page" aria-hidden="true" inert>
+    <nav class="navigation-links" aria-label="Main navigation">
+        <a href="#home" class="navigation-link" data-home><span class="navigation-text">HOME<span class="navigation-half navigation-half-left" aria-hidden="true">HOME</span><span class="navigation-half navigation-half-right" aria-hidden="true">HOME</span></span></a>
+        <a class="navigation-link" href="#about" data-about><span class="navigation-text">ABOUT<span class="navigation-half navigation-half-left" aria-hidden="true">ABOUT</span><span class="navigation-half navigation-half-right" aria-hidden="true">ABOUT</span></span></a>
+        <a class="navigation-link" href="#work" data-work><span class="navigation-text">WORK<span class="navigation-half navigation-half-left" aria-hidden="true">WORK</span><span class="navigation-half navigation-half-right" aria-hidden="true">WORK</span></span></a>
+        <a class="navigation-link" href="#contact" data-contact><span class="navigation-text">CONTACT<span class="navigation-half navigation-half-left" aria-hidden="true">CONTACT</span><span class="navigation-half navigation-half-right" aria-hidden="true">CONTACT</span></span></a>
+    </nav>
+    <footer class="navigation-footer">
+      <div><span class="navigation-footer-caption">DIRECTION</span><span>用户体验设计/AI体验设计</span></div>
+      <div><span class="navigation-footer-caption">CODE</span><span>@彭海朝</span></div>
+    </footer>
+  </section>
+</body>
+</html>
