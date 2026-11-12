@@ -67,32 +67,33 @@
     gsap.set([dots, ring], { transformOrigin: '50% 50%', scale: 1 });
     // Draw the subdued track first, then sweep the bright progress in six steps.
     const track = gsap.timeline()
-      .fromTo(svg, { rotation: -360 }, { rotation: -90, duration: 1.6, ease: inOut }, 0)
-      .to(dots, { strokeDashoffset: 0, autoRound: false, duration: 1.6, ease: inOut }, 0);
-    const assets = [document.fonts.ready, ...Array.from(document.images, img => img.decode ? img.decode().catch(() => {}) : Promise.resolve())];
+      .fromTo(svg, { rotation: -360 }, { rotation: -90, duration: 1.1, ease: inOut }, 0)
+      .to(dots, { strokeDashoffset: 0, autoRound: false, duration: 1.1, ease: inOut }, 0);
+    // Only prepare HOME artwork; decoding the hidden WORK images defeats lazy loading.
+    const assets = [document.fonts.ready, ...Array.from(document.querySelectorAll('#intro .hero img:not([loading="lazy"])'), img => img.decode ? img.decode().catch(() => {}) : Promise.resolve())];
     let timeout;
-    const fallback = new Promise(r => { timeout = setTimeout(r, 5000); });
-    Promise.all([Promise.race([Promise.allSettled(assets), fallback]), new Promise(r => setTimeout(r, 2800))]).then(() => {
+    const fallback = new Promise(r => { timeout = setTimeout(r, 2400); });
+    Promise.all([Promise.race([Promise.allSettled(assets), fallback]), new Promise(r => setTimeout(r, 1200))]).then(() => {
       clearTimeout(timeout);
       load = gsap.timeline();
-      load.to(status, { autoAlpha: 1, y: 0, duration: .65, ease: out }, 0)
-        .to(meta, { autoAlpha: 1, y: 0, duration: .85, ease: out }, 0);
+      load.to(status, { autoAlpha: 1, y: 0, duration: .4, ease: out }, 0)
+        .to(meta, { autoAlpha: 1, y: 0, duration: .55, ease: out }, 0);
       [.13, .31, .46, .68, .84, 1].forEach((value, index) => {
-        load.to(progressState, { value, duration: .25, ease: 'power1.inOut', onUpdate: paintProgress }, index * .25);
+        load.to(progressState, { value, duration: .16, ease: 'power1.inOut', onUpdate: paintProgress }, index * .16);
       });
       load.addLabel('ready')
         .set(dots, { strokeDasharray: '0.00294 0.00294' }, 'ready')
-        .to(root.querySelector('.loading-hello'), { opacity: 0, duration: .4, ease: 'power1.out' }, 'ready')
-        .to(dots, { scale: .8, duration: 1.6, ease: out }, 'ready+=0.3')
-        .to(ring, { scale: .88, duration: 1.6, ease: out }, 'ready+=0.5')
-        .to(label, { opacity: 1, y: 0, duration: 1.2, ease: out }, 'ready+=0.6')
+        .to(root.querySelector('.loading-hello'), { opacity: 0, duration: .25, ease: 'power1.out' }, 'ready')
+        .to(dots, { scale: .8, duration: .85, ease: out }, 'ready+=0.15')
+        .to(ring, { scale: .88, duration: .85, ease: out }, 'ready+=0.25')
+        .to(label, { opacity: 1, y: 0, duration: .65, ease: out }, 'ready+=0.25')
         .call(() => {
           button.disabled = false; button.setAttribute('aria-label', 'Enter portfolio');
           root.dataset.phase = 'ready';
           button.style.cursor = 'pointer';
           status.textContent = 'READY';
           button.focus({ preventScroll: true });
-        }, null, 'ready+=0.6')
+        }, null, 'ready+=0.25')
         .call(() => {
           if (entering) return;
           blink = gsap.timeline({ repeat: -1, repeatDelay: 1, delay: .2 })
@@ -122,16 +123,16 @@
       gsap.set(main, { scale: .8, transformOrigin: `50% ${innerHeight / 2}px`, willChange: 'transform' });
       // Two right-to-left cuts: the face clears first, followed by its backing mask.
       gsap.timeline({ onComplete: finish })
-        .to('.loading-enter', { opacity: 0, duration: .25 }, 0)
-        .to('.loading-access', { opacity: 1, duration: .25 }, .15)
-        .to('.loading-panel', { scale: .8, duration: .85, ease: 'power3.inOut' }, 0)
-        .set(root, { backgroundColor: 'transparent' }, .95)
-        .to('.loading-face', { clipPath: 'inset(0 100% 0 0)', duration: 1.1, ease: 'power2.inOut' }, .95)
-        .to('.loading-underlay', { clipPath: 'inset(0 100% 0 0)', duration: 1.1, ease: 'power2.inOut' }, 1.04)
-        .set('.loading-panel', { visibility: 'hidden' }, 2.15)
-        .to(root, { backgroundColor: 'transparent', duration: .01 }, 2.15)
-        .to('.loading-frame,.loading-surround', { opacity: 0, duration: .35 }, 2.15)
-        .to(main, { scale: 1, duration: .85, ease: 'power3.inOut' }, 2.15);
+        .to('.loading-enter', { opacity: 0, duration: .18 }, 0)
+        .to('.loading-access', { opacity: 1, duration: .18 }, .1)
+        .to('.loading-panel', { scale: .8, duration: .5, ease: 'power3.inOut' }, 0)
+        .set(root, { backgroundColor: 'transparent' }, .55)
+        .to('.loading-face', { clipPath: 'inset(0 100% 0 0)', duration: .65, ease: 'power2.inOut' }, .55)
+        .to('.loading-underlay', { clipPath: 'inset(0 100% 0 0)', duration: .65, ease: 'power2.inOut' }, .63)
+        .set('.loading-panel', { visibility: 'hidden' }, 1.3)
+        .to(root, { backgroundColor: 'transparent', duration: .01 }, 1.3)
+        .to('.loading-frame,.loading-surround', { opacity: 0, duration: .22 }, 1.3)
+        .to(main, { scale: 1, duration: .55, ease: 'power3.inOut' }, 1.3);
     });
   });
 })();
