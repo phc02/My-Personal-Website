@@ -3,6 +3,7 @@
  const hero=document.querySelector('.monitor-hero');
  if(!hero||!window.gsap||!window.ScrollTrigger)return;
  gsap.registerPlugin(ScrollTrigger);
+ ScrollTrigger.config({ignoreMobileResize:true});
  const wrap=(element,name)=>{const wrapper=document.createElement('div');wrapper.className=name;element.before(wrapper);wrapper.append(element);return wrapper;};
  const pointer=wrap(hero.querySelector('.monitor-artboard'),'monitor-hero-pointer');
  const scroll=wrap(pointer,'monitor-hero-scroll');
@@ -27,14 +28,14 @@
   timer=setTimeout(()=>{observer.disconnect();intro.play();},2400);start();
   cancelStart=()=>{observer.disconnect();clearTimeout(timer);};cleanups.push(cancelStart);
   // Keep the artwork opaque and covering the hero throughout entrance and scroll.
-  gsap.fromTo(scroll,{scale:1},{scale:1.035,ease:'none',force3D:false,immediateRender:false,scrollTrigger:{id:'monitor-hero-exit',trigger:hero,start:'top top',end:'bottom top',scrub:.65}});
+  if(context.conditions.desktop)gsap.fromTo(scroll,{scale:1},{scale:1.035,ease:'none',force3D:false,immediateRender:false,scrollTrigger:{id:'monitor-hero-exit',trigger:hero,start:'top top',end:'bottom top',scrub:.65}});
   gsap.to('.monitor-meta',{y:-32,autoAlpha:0,ease:'none',scrollTrigger:{trigger:hero,start:'top -10%',end:'top -60%',scrub:.4}});
   gsap.to(progress,{scaleX:1,ease:'none',scrollTrigger:{id:'monitor-read-progress',trigger:document.querySelector('.zhurong-page'),start:'top top',end:'bottom bottom',scrub:.2,invalidateOnRefresh:true}});
   entries.forEach(({section,enter,exit},index)=>{
    const at=()=>section.getBoundingClientRect().top+scrollY;
-   gsap.fromTo(enter,{y:context.conditions.desktop?52:28,autoAlpha:0},{y:0,autoAlpha:1,duration:.85,ease:'power3.out',force3D:false,scrollTrigger:{id:`monitor-reveal-${index}`,trigger:section,start:'top 94%',toggleActions:'play none none reverse',onEnter:()=>{enter.style.willChange='transform,opacity';},onLeave:()=>{enter.style.willChange='auto';},onLeaveBack:()=>{enter.style.willChange='auto';}}});
+   gsap.fromTo(enter,{y:context.conditions.desktop?52:0,autoAlpha:0},{y:0,autoAlpha:1,duration:.85,ease:'power3.out',force3D:false,scrollTrigger:{id:`monitor-reveal-${index}`,trigger:section,start:'top 94%',toggleActions:'play none none reverse',onEnter:()=>{enter.style.willChange=context.conditions.desktop?'transform,opacity':'opacity';},onLeave:()=>{enter.style.willChange='auto';},onLeaveBack:()=>{enter.style.willChange='auto';}}});
    // Fade only the trailing part of a chapter, after its content has been read.
-   gsap.fromTo(exit,{y:0,opacity:1},{y:-24,opacity:.68,ease:'none',force3D:false,immediateRender:false,scrollTrigger:{id:`monitor-exit-${index}`,trigger:section,start:'bottom 25%',end:'bottom top',scrub:.45,invalidateOnRefresh:true}});
+   if(context.conditions.desktop)gsap.fromTo(exit,{y:0,opacity:1},{y:-24,opacity:.68,ease:'none',force3D:false,immediateRender:false,scrollTrigger:{id:`monitor-exit-${index}`,trigger:section,start:'bottom 25%',end:'bottom top',scrub:.45,invalidateOnRefresh:true}});
    if(at()<scrollY+innerHeight*.94)ScrollTrigger.getById(`monitor-reveal-${index}`)?.animation?.progress(1);
   });
   for(const id of ['3985:8105','3985:8111','3985:8117']){

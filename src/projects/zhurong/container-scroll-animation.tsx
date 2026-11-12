@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+ScrollTrigger.config({ignoreMobileResize:true});
 
 type ContainerScrollProps = {
   titleComponent: React.ReactNode;

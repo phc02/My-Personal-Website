@@ -27,7 +27,7 @@ export default function CircleScroll(){
    viewport.replaceChildren(...pages.slice(0,count).map(page=>{
     const copy=page.cloneNode(true) as HTMLElement;
     copy.querySelectorAll('[id]').forEach(element=>element.removeAttribute('id'));
-    copy.querySelectorAll('img').forEach(image=>{image.loading='eager';image.decoding='sync';});
+    copy.querySelectorAll('img').forEach(image=>{image.loading='eager';image.decoding='async';});
     return copy;
    }));
   };

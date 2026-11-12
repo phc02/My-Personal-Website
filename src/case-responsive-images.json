@@ -1,0 +1,665 @@
+{
+  "projects/zhurong/assets/casting-insight-dashboard.webp": {
+    "width": 3200,
+    "variants": [
+      {
+        "src": "assets/case-responsive/d2cdb9e8cc1e996c-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/d2cdb9e8cc1e996c-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/d2cdb9e8cc1e996c-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-10012-d167b.webp": {
+    "width": 3200,
+    "variants": [
+      {
+        "src": "assets/case-responsive/df8bd292d5a7a777-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/df8bd292d5a7a777-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/df8bd292d5a7a777-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-10123-exact.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/9b80272f3e82ad8b-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/9b80272f3e82ad8b-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/9b80272f3e82ad8b-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-10135-exact.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/4dd6571b1dc29f15-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/4dd6571b1dc29f15-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/4dd6571b1dc29f15-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-10171-exact.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/45f1497243726510-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/45f1497243726510-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/45f1497243726510-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-8711-164c2.webp": {
+    "width": 4000,
+    "variants": [
+      {
+        "src": "assets/case-responsive/1e7a22c57cd49fe9-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/1e7a22c57cd49fe9-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/1e7a22c57cd49fe9-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-8711-37750.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/7c53ca94b37db63b-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/7c53ca94b37db63b-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/7c53ca94b37db63b-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-8711-hero-exact.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/2f7778c61c6cb22c-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/2f7778c61c6cb22c-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/2f7778c61c6cb22c-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9270-07c2d.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/96c7543a42fa523e-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/96c7543a42fa523e-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/96c7543a42fa523e-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9270-24b93.webp": {
+    "width": 3200,
+    "variants": [
+      {
+        "src": "assets/case-responsive/a2264a0112f3a245-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/a2264a0112f3a245-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/a2264a0112f3a245-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9450-exact.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/1296790b15290bf4-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/1296790b15290bf4-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/1296790b15290bf4-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9666-exact.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/1e6a4f97ff75091a-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/1e6a4f97ff75091a-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/1e6a4f97ff75091a-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9774-a1259.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/9c22a429a61a2748-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/9c22a429a61a2748-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/9c22a429a61a2748-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9811-a1259.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/9c22a429a61a2748-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/9c22a429a61a2748-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/9c22a429a61a2748-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9811-exact.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/2d565d3cad109d5c-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/2d565d3cad109d5c-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/2d565d3cad109d5c-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9811-f27ce.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/266dca28145f34bb-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/266dca28145f34bb-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/266dca28145f34bb-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9828-a1259.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/9c22a429a61a2748-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/9c22a429a61a2748-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/9c22a429a61a2748-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9828-bdebe.webp": {
+    "width": 2048,
+    "variants": [
+      {
+        "src": "assets/case-responsive/ac4da82e011e07f1-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/ac4da82e011e07f1-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/ac4da82e011e07f1-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9828-d167b.webp": {
+    "width": 3200,
+    "variants": [
+      {
+        "src": "assets/case-responsive/df8bd292d5a7a777-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/df8bd292d5a7a777-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/df8bd292d5a7a777-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9828-exact.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/417dfe43ccef8192-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/417dfe43ccef8192-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/417dfe43ccef8192-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9902-2ea95.webp": {
+    "width": 3840,
+    "variants": [
+      {
+        "src": "assets/case-responsive/93ed49eef4b741ef-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/93ed49eef4b741ef-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/93ed49eef4b741ef-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9902-exact.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/abdecb7fade10ac1-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/abdecb7fade10ac1-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/abdecb7fade10ac1-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9984-1d2e7.webp": {
+    "width": 3200,
+    "variants": [
+      {
+        "src": "assets/case-responsive/6ad04e1e863ff990-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/6ad04e1e863ff990-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/6ad04e1e863ff990-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9984-2121b.webp": {
+    "width": 3200,
+    "variants": [
+      {
+        "src": "assets/case-responsive/7f4bf159d6e097d3-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/7f4bf159d6e097d3-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/7f4bf159d6e097d3-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9984-29bac.webp": {
+    "width": 3200,
+    "variants": [
+      {
+        "src": "assets/case-responsive/4560be391c9de7bd-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/4560be391c9de7bd-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/4560be391c9de7bd-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9984-462df.webp": {
+    "width": 3200,
+    "variants": [
+      {
+        "src": "assets/case-responsive/813f6b0b5cd57dd3-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/813f6b0b5cd57dd3-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/813f6b0b5cd57dd3-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9984-7e0bd.webp": {
+    "width": 3200,
+    "variants": [
+      {
+        "src": "assets/case-responsive/9e8ca83c62ea2133-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/9e8ca83c62ea2133-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/9e8ca83c62ea2133-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/continuation/3985-9984-b079c.webp": {
+    "width": 3200,
+    "variants": [
+      {
+        "src": "assets/case-responsive/d90fdcbd01a0bef7-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/d90fdcbd01a0bef7-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/d90fdcbd01a0bef7-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/figma/37750.webp": {
+    "width": 1920,
+    "variants": [
+      {
+        "src": "assets/case-responsive/7c53ca94b37db63b-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/7c53ca94b37db63b-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/7c53ca94b37db63b-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/figma/648eb.webp": {
+    "width": 3630,
+    "variants": [
+      {
+        "src": "assets/case-responsive/f60f4510dd429c0e-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/f60f4510dd429c0e-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/f60f4510dd429c0e-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/zhurong/assets/hero-atmosphere.webp": {
+    "width": 2326,
+    "variants": [
+      {
+        "src": "assets/case-responsive/11b94efb04e6e83a-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/11b94efb04e6e83a-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/11b94efb04e6e83a-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/m7-monitor/assets/continuation/3985-8083-54651.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/a42c59e00f973b99-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/a42c59e00f973b99-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/a42c59e00f973b99-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/m7-monitor/assets/continuation/3985-8083-68888.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/f460d10b93953547-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/f460d10b93953547-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/f460d10b93953547-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/m7-monitor/assets/continuation/3985-8223-8d5f3.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/d047c4b857944f96-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/d047c4b857944f96-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/d047c4b857944f96-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/m7-monitor/assets/continuation/3985-8368-757c2.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/699cf78b75ba2bc9-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/699cf78b75ba2bc9-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/699cf78b75ba2bc9-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/m7-monitor/assets/continuation/3985-8368-803b6.webp": {
+    "width": 5530,
+    "variants": [
+      {
+        "src": "assets/case-responsive/5414e663c64684b3-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/5414e663c64684b3-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/5414e663c64684b3-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/m7-monitor/assets/continuation/3985-8368-93758.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/4adcfe385e246a7a-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/4adcfe385e246a7a-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/4adcfe385e246a7a-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/m7-monitor/assets/continuation/4048-316-3b92a.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/270ff4d4b4e58bdc-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/270ff4d4b4e58bdc-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/270ff4d4b4e58bdc-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "projects/m7-monitor/assets/monitor-scene.webp": {
+    "width": 4096,
+    "variants": [
+      {
+        "src": "assets/case-responsive/3965a460fa035746-480.webp",
+        "width": 480
+      },
+      {
+        "src": "assets/case-responsive/3965a460fa035746-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/case-responsive/3965a460fa035746-1440.webp",
+        "width": 1440
+      }
+    ]
+  }
+}

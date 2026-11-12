@@ -55,6 +55,8 @@ npm start
 
 替换资源后检查 `src/asset-variants.json` 中是否有对应网页版本，必要时同步生成该版本或移除该映射。软件原图位于 `public/assets/software-icons/originals/`；更新后运行 `qa/prepare-home-skill-icons.py` 生成卡片素材，再构建。
 
+铸融与 M7 监控详情页使用手机专用的响应式图片，桌面继续读取完整原图。更新这两页的大图后，运行 `python qa/prepare-case-mobile-images.py`（需要 Pillow），并提交生成的 `public/assets/case-responsive/` 与 `src/case-responsive-images.json`。普通部署构建不需要 Python 或图片处理依赖。手机端减少长章节合成层和文字模糊，避免滚动期间持续占用过多图像内存。
+
 共享曲面转场位于 `public/project-transition.js` 和 `.css`。项目页导航位于 `public/projects/zhurong/assets/header.js`，首页导航位于 `src/navigation.js`，点击与页头遮罩同步位于 `src/header-scroll.js`。
 
 ## 验证

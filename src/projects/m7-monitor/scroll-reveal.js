@@ -37,7 +37,9 @@
     return { element, text, words, id };
   }).filter(Boolean);
   const media = gsap.matchMedia();
-  media.add('(prefers-reduced-motion: no-preference)', () => {
+  media.add({motion:'(prefers-reduced-motion: no-preference)',desktop:'(min-width:768px)',fine:'(pointer:fine)'}, context => {
+    if (!context.conditions.motion) return;
+    const blur = context.conditions.desktop && context.conditions.fine;
     targets.forEach(({ element, text, words, id }) => {
       // Chapter entrance/exit shells also move. Exclude those offsets when measuring
       // the text's scroll range so refresh and reverse scroll use stable coordinates.
@@ -55,9 +57,9 @@
         scrollTrigger: { id: `monitor-text-rotation-${id}`, trigger: element,
           start: () => top() - innerHeight, end, scrub: true, invalidateOnRefresh: true }
       });
-      gsap.set(words, { opacity: .1, filter: 'blur(4px)' });
+      gsap.set(words, { opacity: .1, ...(blur ? {filter:'blur(4px)'} : {}) });
       gsap.to(words, {
-        opacity: 1, filter: 'blur(0px)', duration: .5, stagger: .05, ease: 'none',
+        opacity: 1, ...(blur ? {filter:'blur(0px)'} : {}), duration: .5, stagger: .05, ease: 'none',
         scrollTrigger: { id: `monitor-text-reveal-${id}`, trigger: element,
           start: () => top() - innerHeight + .2 * Math.min(element.offsetHeight, innerHeight),
           end, scrub: true, invalidateOnRefresh: true }

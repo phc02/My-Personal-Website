@@ -21,6 +21,7 @@ export async function optimizeBuild(root) {
   if (!generated.startsWith(publicRoot + sep)) throw new Error('Invalid generated directory');
   await rm(generated, {recursive: true, force: true}); await mkdir(generated, {recursive: true});
   const variants = JSON.parse(await readFile(resolve(root, 'src/asset-variants.json'), 'utf8'));
+  const responsiveImages = JSON.parse(await readFile(resolve(root, 'src/case-responsive-images.json'), 'utf8'));
   const assetByHash = new Map(), decoded = new Map(), emitted = new Set();
   const publicFiles = await filesIn(publicRoot);
   for (const path of publicFiles) {
@@ -69,6 +70,28 @@ export async function optimizeBuild(root) {
       }
       // Continue to honor the user's exact original images; only lossless variants are substituted.
       for (const [original, variant] of Object.entries(variants)) html = html.replaceAll(prefix + original, prefix + variant);
+      if (['ZHURONG.html', 'M7-MONITOR.html'].includes(route)) {
+        html = html.replace('</head>', `<link rel="stylesheet" href="${prefix}case-study-mobile.css">\n</head>`);
+        const responsive = source => {
+          const image = responsiveImages[source];
+          if (!image) return null;
+          return {
+            srcset: [...image.variants.map(item => `${prefix}${item.src} ${item.width}w`), `${prefix}${source} ${image.width}w`].join(', '),
+            sizes: `(max-width: 767px) min(100vw, 480px), ${image.width}px`,
+          };
+        };
+        html = html.replace(/<img\b[^>]*>/g, tag => {
+          const source = tag.match(/\bsrc=["']([^"']+)["']/)?.[1];
+          const image = source && responsive(local ? source.replace(/^public\//, '') : source);
+          if (!image || /\bsrcset=/.test(tag)) return tag;
+          return tag.replace(/(\/?>)$/, ` srcset="${image.srcset}" sizes="${image.sizes}"$1`);
+        });
+        // The Zhurong hero creates its images through React after initial parsing.
+        for (const source of Object.keys(responsiveImages)) {
+          const image = responsive(source);
+          html = html.replaceAll(`src:"${prefix}${source}"`, `src:"${prefix}${source}",srcSet:${JSON.stringify(image.srcset)},sizes:${JSON.stringify(image.sizes)}`);
+        }
+      }
       // Hosted builds can load large videos from R2.
 const videoBase = process.env.VIDEO_ASSET_BASE_URL?.trim().replace(/\/+$/, '');
 
@@ -152,6 +175,10 @@ if (!local && videoBase) {
     const text = (await readFile(path, 'utf8')).replaceAll('&quot;', '"').replaceAll('&#x27;', "'").replaceAll('&amp;', '&');
     const base = /\.(css|html)$/.test(file) ? posix.dirname(file) : documentBase;
     const candidates = [...text.matchAll(literal)].map(m => m[1]);
+    // Each srcset is a list, not a single asset URL (also used in React bundles).
+    for (const match of text.matchAll(/\b(?:srcset=|srcSet:)(["'])(.*?)\1/g)) {
+      candidates.push(...match[2].split(',').map(item => item.trim().split(/\s+/)[0]));
+    }
     if (file.endsWith('.css')) candidates.push(...[...text.matchAll(/url\((['"]?)([^)'"\s]+)\1\)/g)].map(m => m[2]));
     for (let candidate of candidates) {
       if (/^(?:[a-z]+:|\/\/|#|%23)/i.test(candidate) || candidate.includes('${') || candidate.includes('&quot;')) continue;

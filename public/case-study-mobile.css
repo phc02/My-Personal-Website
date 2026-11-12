@@ -1,0 +1,5 @@
+/* Only included by the two long, image-heavy case studies. */
+@media (hover:none), (pointer:coarse) {
+  html,body { overscroll-behavior-y:none; }
+  .case-orbit-preview { will-change:auto; }
+}
