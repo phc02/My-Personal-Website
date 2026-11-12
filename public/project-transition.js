@@ -45,11 +45,19 @@
     let origin; try { origin = JSON.parse(sessionStorage.getItem('portfolio-project-origin')); } catch {}
     return origin?.url && history.state?.portfolioOrigin === origin.url && history.length > 1 ? depart(origin.url, 'WORK & EXPERIENCE', true) : depart(fallback, 'WORK & EXPERIENCE');
   };
+  function sameDocument(expected, actual) {
+    const target = new URL(expected, location.href), current = new URL(actual, location.href);
+    // Pages redirects /project.html to /project and /index.html to /.
+    // Match those document aliases while preserving section queries and hashes.
+    const route = pathname => pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+    return target.origin === current.origin && route(target.pathname) === route(current.pathname)
+      && target.search === current.search && target.hash === current.hash;
+  }
   function consume() {
     let pending;
     try {
       pending = JSON.parse(sessionStorage.getItem(key));
-      if (pending && pending.target === location.href && Date.now() - pending.time < 15000) sessionStorage.removeItem(key);
+      if (pending && sameDocument(pending.target, location.href) && Date.now() - pending.time < 15000) sessionStorage.removeItem(key);
       else pending = null;
     } catch {}
     return pending;
